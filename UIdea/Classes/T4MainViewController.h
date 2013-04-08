@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "T4ViewController.h"
 
-@interface T4MainViewController : UIViewController
+@interface T4MainViewController : T4ViewController
 
 - (IBAction)onClickTest:(id)sender;
 
