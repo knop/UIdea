@@ -7,9 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SynthesizeSingleton.h"
 
 @interface T4ControllerMap : NSObject
+{
+    NSMutableDictionary *_controllerDict;
+}
 
+SYNTHESIZE_SINGLETON_FOR_HEADER(T4ControllerMap)
 
++ (UINavigationController *)globalNavgationController;
+
+- (void)addClass:(Class)c;
+- (void)show:(NSString *)className;
 
 @end

@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "T4UIView.h"
+#import "T4UIViewData.h"
 
 @interface T4UIFactory : NSObject
 
-- (UIView *)genNativeView:(T4UIView *)t4View;
+- (UIView *)genNativeView:(T4UIViewData *)t4View;
 
 @end

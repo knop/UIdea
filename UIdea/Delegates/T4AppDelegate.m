@@ -7,6 +7,8 @@
 //
 
 #import "T4AppDelegate.h"
+#import "T4ControllerMap.h"
+#import "T4MainViewController.h"
 
 @implementation T4AppDelegate
 
@@ -21,8 +23,12 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
-    
+    self.window.rootViewController = [T4ControllerMap globalNavgationController];
     [self.window makeKeyAndVisible];
+    
+    [[T4ControllerMap sharedInstance] addClass:[T4MainViewController class]];
+    [[T4ControllerMap sharedInstance] show:@"T4MainViewController"];
+    
     return YES;
 }
 

@@ -16,6 +16,8 @@
 		4B79E8251712A908004C151A /* T4UIFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B79E8241712A908004C151A /* T4UIFactory.m */; };
 		4B79E8281712AB03004C151A /* T4UICanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B79E8271712AB03004C151A /* T4UICanvas.m */; };
 		4B79E82B1712AD32004C151A /* T4UIBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B79E82A1712AD31004C151A /* T4UIBuilder.m */; };
+		4B79E82F1712B77F004C151A /* T4MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B79E82D1712B77D004C151A /* T4MainViewController.m */; };
+		4B79E8301712B77F004C151A /* T4MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B79E82E1712B77E004C151A /* T4MainViewController.xib */; };
 		4B8B725E170BD11C00C47854 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8B725D170BD11C00C47854 /* UIKit.framework */; };
 		4B8B7260170BD11C00C47854 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8B725F170BD11C00C47854 /* Foundation.framework */; };
 		4B8B7262170BD11C00C47854 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8B7261170BD11C00C47854 /* CoreGraphics.framework */; };
@@ -44,6 +46,10 @@
 		4B79E8271712AB03004C151A /* T4UICanvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = T4UICanvas.m; path = Classes/T4UICanvas.m; sourceTree = "<group>"; };
 		4B79E8291712AD31004C151A /* T4UIBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = T4UIBuilder.h; path = Classes/T4UIBuilder.h; sourceTree = "<group>"; };
 		4B79E82A1712AD31004C151A /* T4UIBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = T4UIBuilder.m; path = Classes/T4UIBuilder.m; sourceTree = "<group>"; };
+		4B79E82C1712B77D004C151A /* T4MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = T4MainViewController.h; path = Classes/T4MainViewController.h; sourceTree = "<group>"; };
+		4B79E82D1712B77D004C151A /* T4MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = T4MainViewController.m; path = Classes/T4MainViewController.m; sourceTree = "<group>"; };
+		4B79E82E1712B77E004C151A /* T4MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = T4MainViewController.xib; path = Classes/T4MainViewController.xib; sourceTree = "<group>"; };
+		4B79E8311712B846004C151A /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
 		4B8B725A170BD11C00C47854 /* UIdea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIdea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B8B725D170BD11C00C47854 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4B8B725F170BD11C00C47854 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -103,6 +109,9 @@
 				4B79E8271712AB03004C151A /* T4UICanvas.m */,
 				4B79E8291712AD31004C151A /* T4UIBuilder.h */,
 				4B79E82A1712AD31004C151A /* T4UIBuilder.m */,
+				4B79E82C1712B77D004C151A /* T4MainViewController.h */,
+				4B79E82D1712B77D004C151A /* T4MainViewController.m */,
+				4B79E82E1712B77E004C151A /* T4MainViewController.xib */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -110,6 +119,7 @@
 		4B79E81817128AC3004C151A /* 3rdParty */ = {
 			isa = PBXGroup;
 			children = (
+				4B79E8311712B846004C151A /* SynthesizeSingleton.h */,
 				4B79E81917128B5D004C151A /* JsonKit */,
 			);
 			path = 3rdParty;
@@ -234,6 +244,7 @@
 				4B8B7272170BD11C00C47854 /* Default@2x.png in Resources */,
 				4B8B7274170BD11C00C47854 /* Default-568h@2x.png in Resources */,
 				4B79E7F41711560B004C151A /* nav_bar_bg@2x.png in Resources */,
+				4B79E8301712B77F004C151A /* T4MainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +264,7 @@
 				4B79E8251712A908004C151A /* T4UIFactory.m in Sources */,
 				4B79E8281712AB03004C151A /* T4UICanvas.m in Sources */,
 				4B79E82B1712AD32004C151A /* T4UIBuilder.m in Sources */,
+				4B79E82F1712B77F004C151A /* T4MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
