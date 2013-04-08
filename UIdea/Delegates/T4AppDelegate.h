@@ -1,5 +1,5 @@
 //
-//  t4AppDelegate.h
+//  T4AppDelegate.h
 //  UIdea
 //
 //  Created by Xiaohui on 13-4-3.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface t4AppDelegate : UIResponder <UIApplicationDelegate>
+@interface T4AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

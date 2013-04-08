@@ -1,14 +1,14 @@
 //
-//  t4AppDelegate.m
+//  T4AppDelegate.m
 //  UIdea
 //
 //  Created by Xiaohui on 13-4-3.
 //  Copyright (c) 2013年 Team4. All rights reserved.
 //
 
-#import "t4AppDelegate.h"
+#import "T4AppDelegate.h"
 
-@implementation t4AppDelegate
+@implementation T4AppDelegate
 
 - (void)dealloc
 {
@@ -21,6 +21,7 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    
     [self.window makeKeyAndVisible];
     return YES;
 }

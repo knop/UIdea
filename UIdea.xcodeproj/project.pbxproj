@@ -7,18 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B79E7F41711560B004C151A /* nav_bar_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B79E7F31711560B004C151A /* nav_bar_bg@2x.png */; };
+		4B79E7F8171165CE004C151A /* T4AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B79E7F7171165CE004C151A /* T4AppDelegate.m */; };
+		4B79E8141711CC83004C151A /* T4ControllerMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B79E8131711CC83004C151A /* T4ControllerMap.m */; };
+		4B79E817171262E9004C151A /* T4UIViewData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B79E816171262E9004C151A /* T4UIViewData.m */; };
+		4B79E81C17128B5D004C151A /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B79E81B17128B5D004C151A /* JSONKit.m */; };
+		4B79E8221712A7C7004C151A /* T4UIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B79E8211712A7C7004C151A /* T4UIManager.m */; };
+		4B79E8251712A908004C151A /* T4UIFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B79E8241712A908004C151A /* T4UIFactory.m */; };
+		4B79E8281712AB03004C151A /* T4UICanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B79E8271712AB03004C151A /* T4UICanvas.m */; };
+		4B79E82B1712AD32004C151A /* T4UIBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B79E82A1712AD31004C151A /* T4UIBuilder.m */; };
 		4B8B725E170BD11C00C47854 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8B725D170BD11C00C47854 /* UIKit.framework */; };
 		4B8B7260170BD11C00C47854 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8B725F170BD11C00C47854 /* Foundation.framework */; };
 		4B8B7262170BD11C00C47854 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8B7261170BD11C00C47854 /* CoreGraphics.framework */; };
 		4B8B7268170BD11C00C47854 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4B8B7266170BD11C00C47854 /* InfoPlist.strings */; };
 		4B8B726A170BD11C00C47854 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B8B7269170BD11C00C47854 /* main.m */; };
-		4B8B726E170BD11C00C47854 /* t4AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B8B726D170BD11C00C47854 /* t4AppDelegate.m */; };
 		4B8B7270170BD11C00C47854 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B8B726F170BD11C00C47854 /* Default.png */; };
 		4B8B7272170BD11C00C47854 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B8B7271170BD11C00C47854 /* Default@2x.png */; };
 		4B8B7274170BD11C00C47854 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B8B7273170BD11C00C47854 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B79E7F31711560B004C151A /* nav_bar_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_bar_bg@2x.png"; sourceTree = "<group>"; };
+		4B79E7F6171165CE004C151A /* T4AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T4AppDelegate.h; sourceTree = "<group>"; };
+		4B79E7F7171165CE004C151A /* T4AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T4AppDelegate.m; sourceTree = "<group>"; };
+		4B79E8121711CC83004C151A /* T4ControllerMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = T4ControllerMap.h; path = Classes/T4ControllerMap.h; sourceTree = "<group>"; };
+		4B79E8131711CC83004C151A /* T4ControllerMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = T4ControllerMap.m; path = Classes/T4ControllerMap.m; sourceTree = "<group>"; };
+		4B79E815171262E9004C151A /* T4UIViewData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = T4UIViewData.h; path = Classes/T4UIViewData.h; sourceTree = "<group>"; };
+		4B79E816171262E9004C151A /* T4UIViewData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = T4UIViewData.m; path = Classes/T4UIViewData.m; sourceTree = "<group>"; };
+		4B79E81A17128B5D004C151A /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		4B79E81B17128B5D004C151A /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		4B79E8201712A7C6004C151A /* T4UIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = T4UIManager.h; path = Classes/T4UIManager.h; sourceTree = "<group>"; };
+		4B79E8211712A7C7004C151A /* T4UIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = T4UIManager.m; path = Classes/T4UIManager.m; sourceTree = "<group>"; };
+		4B79E8231712A908004C151A /* T4UIFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = T4UIFactory.h; path = Classes/T4UIFactory.h; sourceTree = "<group>"; };
+		4B79E8241712A908004C151A /* T4UIFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = T4UIFactory.m; path = Classes/T4UIFactory.m; sourceTree = "<group>"; };
+		4B79E8261712AB02004C151A /* T4UICanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = T4UICanvas.h; path = Classes/T4UICanvas.h; sourceTree = "<group>"; };
+		4B79E8271712AB03004C151A /* T4UICanvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = T4UICanvas.m; path = Classes/T4UICanvas.m; sourceTree = "<group>"; };
+		4B79E8291712AD31004C151A /* T4UIBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = T4UIBuilder.h; path = Classes/T4UIBuilder.h; sourceTree = "<group>"; };
+		4B79E82A1712AD31004C151A /* T4UIBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = T4UIBuilder.m; path = Classes/T4UIBuilder.m; sourceTree = "<group>"; };
 		4B8B725A170BD11C00C47854 /* UIdea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIdea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B8B725D170BD11C00C47854 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4B8B725F170BD11C00C47854 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -27,8 +52,6 @@
 		4B8B7267170BD11C00C47854 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4B8B7269170BD11C00C47854 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4B8B726B170BD11C00C47854 /* UIdea-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIdea-Prefix.pch"; sourceTree = "<group>"; };
-		4B8B726C170BD11C00C47854 /* t4AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = t4AppDelegate.h; sourceTree = "<group>"; };
-		4B8B726D170BD11C00C47854 /* t4AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = t4AppDelegate.m; sourceTree = "<group>"; };
 		4B8B726F170BD11C00C47854 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		4B8B7271170BD11C00C47854 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		4B8B7273170BD11C00C47854 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -48,6 +71,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B79E7F2171155F3004C151A /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				4B79E7F31711560B004C151A /* nav_bar_bg@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		4B79E7F5171165CE004C151A /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				4B79E7F6171165CE004C151A /* T4AppDelegate.h */,
+				4B79E7F7171165CE004C151A /* T4AppDelegate.m */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		4B79E8111711CC37004C151A /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4B79E8121711CC83004C151A /* T4ControllerMap.h */,
+				4B79E8131711CC83004C151A /* T4ControllerMap.m */,
+				4B79E815171262E9004C151A /* T4UIViewData.h */,
+				4B79E816171262E9004C151A /* T4UIViewData.m */,
+				4B79E8201712A7C6004C151A /* T4UIManager.h */,
+				4B79E8211712A7C7004C151A /* T4UIManager.m */,
+				4B79E8231712A908004C151A /* T4UIFactory.h */,
+				4B79E8241712A908004C151A /* T4UIFactory.m */,
+				4B79E8261712AB02004C151A /* T4UICanvas.h */,
+				4B79E8271712AB03004C151A /* T4UICanvas.m */,
+				4B79E8291712AD31004C151A /* T4UIBuilder.h */,
+				4B79E82A1712AD31004C151A /* T4UIBuilder.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		4B79E81817128AC3004C151A /* 3rdParty */ = {
+			isa = PBXGroup;
+			children = (
+				4B79E81917128B5D004C151A /* JsonKit */,
+			);
+			path = 3rdParty;
+			sourceTree = "<group>";
+		};
+		4B79E81917128B5D004C151A /* JsonKit */ = {
+			isa = PBXGroup;
+			children = (
+				4B79E81A17128B5D004C151A /* JSONKit.h */,
+				4B79E81B17128B5D004C151A /* JSONKit.m */,
+			);
+			path = JsonKit;
+			sourceTree = "<group>";
+		};
 		4B8B7251170BD11C00C47854 = {
 			isa = PBXGroup;
 			children = (
@@ -78,8 +154,10 @@
 		4B8B7263170BD11C00C47854 /* UIdea */ = {
 			isa = PBXGroup;
 			children = (
-				4B8B726C170BD11C00C47854 /* t4AppDelegate.h */,
-				4B8B726D170BD11C00C47854 /* t4AppDelegate.m */,
+				4B79E81817128AC3004C151A /* 3rdParty */,
+				4B79E8111711CC37004C151A /* Classes */,
+				4B79E7F5171165CE004C151A /* Delegates */,
+				4B79E7F2171155F3004C151A /* Images */,
 				4B8B7264170BD11C00C47854 /* Supporting Files */,
 			);
 			path = UIdea;
@@ -155,6 +233,7 @@
 				4B8B7270170BD11C00C47854 /* Default.png in Resources */,
 				4B8B7272170BD11C00C47854 /* Default@2x.png in Resources */,
 				4B8B7274170BD11C00C47854 /* Default-568h@2x.png in Resources */,
+				4B79E7F41711560B004C151A /* nav_bar_bg@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,7 +245,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B8B726A170BD11C00C47854 /* main.m in Sources */,
-				4B8B726E170BD11C00C47854 /* t4AppDelegate.m in Sources */,
+				4B79E7F8171165CE004C151A /* T4AppDelegate.m in Sources */,
+				4B79E8141711CC83004C151A /* T4ControllerMap.m in Sources */,
+				4B79E817171262E9004C151A /* T4UIViewData.m in Sources */,
+				4B79E81C17128B5D004C151A /* JSONKit.m in Sources */,
+				4B79E8221712A7C7004C151A /* T4UIManager.m in Sources */,
+				4B79E8251712A908004C151A /* T4UIFactory.m in Sources */,
+				4B79E8281712AB03004C151A /* T4UICanvas.m in Sources */,
+				4B79E82B1712AD32004C151A /* T4UIBuilder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +365,7 @@
 				4B8B7279170BD11C00C47854 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

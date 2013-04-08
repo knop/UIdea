@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-#import "t4AppDelegate.h"
+#import "T4AppDelegate.h"
 
 int main(int argc, char *argv[])
 {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([t4AppDelegate class]));
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([T4AppDelegate class]));
     }
 }
