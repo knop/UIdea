@@ -11,8 +11,6 @@
 
 @implementation T4UIProjectManager
 
-SYNTHESIZE_SINGLETON_FOR_CLASS(T4UIProjectManager)
-
 - (id)init
 {
     self = [super init];
@@ -26,10 +24,12 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(T4UIProjectManager)
 {
     static NSUInteger count = 0;
     T4UIProject *project = [[T4UIProject alloc] init];
-    project.name = [NSString stringWithFormat:@"Demo %d", count++];
-    project.description = [NSString stringWithFormat:@"Demo %d description", count++];
+    
+    project.name = [NSString stringWithFormat:@"Demo %d", count];
+    project.description = [NSString stringWithFormat:@"Demo %d description", count];
     project.viewCount = 0;
-    [_projects addObject:project];    
+    [_projects addObject:project];
+    count++;
     [project release];
 }
 
@@ -40,7 +40,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(T4UIProjectManager)
 
 - (void)dealloc
 {
-    [_projects release];
+    T4_RELEASE_SAFELY(_projects);
     [super dealloc];
 }
 

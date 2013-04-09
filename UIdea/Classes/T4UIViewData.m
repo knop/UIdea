@@ -22,10 +22,10 @@
 
 - (void)dealloc
 {
-    [_name release];
-    [_link release];
-    [_description release];
-    [_child release];
+    T4_RELEASE_SAFELY(_name);
+    T4_RELEASE_SAFELY(_link);
+    T4_RELEASE_SAFELY(_description);
+    T4_RELEASE_SAFELY(_child);
     [super dealloc];
 }
 

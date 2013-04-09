@@ -10,6 +10,13 @@
 
 @implementation T4UIProject
 
+- (void)dealloc
+{
+    T4_RELEASE_SAFELY(_name);
+    T4_RELEASE_SAFELY(_description);
+    [super dealloc];
+}
+
 @synthesize name = _name;
 @synthesize description = _description;
 @synthesize viewCount = _viewCount;

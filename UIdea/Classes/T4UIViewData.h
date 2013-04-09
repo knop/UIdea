@@ -6,8 +6,6 @@
 //  Copyright (c) 2013年 Team4. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 /*
  控件数据类，存储控件的相关参数，然后通过控件工厂T4UIFactory生成相应的控件
  */

@@ -6,7 +6,6 @@
 //  Copyright (c) 2013年 Team4. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "T4UIViewData.h"
 
 @interface T4UIFactory : NSObject

@@ -9,6 +9,7 @@
 #import "T4MainViewController.h"
 #import "T4ControllerMap.h"
 #import "T4UIProjectManager.h"
+#import "T4ProjectCell.h"
 
 @interface T4MainViewController ()
 
@@ -17,6 +18,15 @@
 @end
 
 @implementation T4MainViewController
+
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        _projectManager = [[T4UIProjectManager alloc] init];
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
@@ -52,7 +62,7 @@
 
 - (void)refreshView
 {
-    if ([[T4UIProjectManager sharedInstance] projectCount] > 0) {
+    if (_projectManager.projects.count > 0) {
         self.dataView.hidden = NO;
         [self.dataTableView reloadData];
         self.emptyView.hidden = YES;
@@ -64,32 +74,35 @@
 
 - (void)newProject
 {
-    [[T4UIProjectManager sharedInstance] addProject];
+    [_projectManager addProject];
     [self refreshView];
 }
 
 - (void)dealloc {
-    [_emptyView release];
-    [_dataTableView release];
-    [_dataView release];
+    T4_RELEASE_SAFELY(_emptyView);
+    T4_RELEASE_SAFELY(_dataTableView);
+    T4_RELEASE_SAFELY(_dataView);
     [super dealloc];
 }
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 0;
+    return 44.0;
 }
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return _projectManager.projects.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return nil;
+    T4ProjectCell *cell = [[T4ProjectCell alloc] init];
+    id object = [_projectManager.projects objectAtIndex:indexPath.row];
+    [cell setObject:object];
+    return cell;
 }
 
 @end
