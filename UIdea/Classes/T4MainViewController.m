@@ -9,8 +9,6 @@
 #import "T4MainViewController.h"
 #import "T4ControllerMap.h"
 
-#define NAVIGATION_BAR_BTN_RECT CGRectMake(0.0f, 0.0f, 36.0f, 28.0f)
-
 @interface T4MainViewController ()
 
 @end
@@ -21,12 +19,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-//    UIButton *hNavBtn = [[UIButton alloc] initWithFrame:NAVIGATION_BAR_BTN_RECT];
-//    [hNavBtn setBackgroundImage:[UIImage imageNamed:@"nav_bar_button_normal"] forState:UIControlStateNormal];
-//    [hNavBtn setBackgroundImage:[UIImage imageNamed:@"nav_bar_button_press"] forState:UIControlStateHighlighted];
-//    UIBarButtonItem *hBtnItem = [[UIBarButtonItem alloc] initWithCustomView:hNavBtn];
-//    self.navigationItem.leftBarButtonItem = hBtnItem;
-//    self.navigationItem.title = @"11111111";
+    self.leftNavButtonType = NavButtonBack;
+    self.rightNavButtonType = NavButtonAdd;
 }
 
 - (void)didReceiveMemoryWarning
@@ -38,6 +32,11 @@
 - (IBAction)onClickTest:(id)sender
 {
     [[T4ControllerMap sharedInstance] show:@"T4MainViewController"];
+}
+
+- (void)onClickRightNavBarButton
+{
+    NSLog(@"child-onClickRightNavBarButton");
 }
 
 @end

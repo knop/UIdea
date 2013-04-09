@@ -9,14 +9,13 @@
 #import <UIKit/UIKit.h>
 
 typedef enum {
+    NavButtonNone,
     NavButtonBack,
     NavButtonAdd,
+    NavButtonSetting,
 } NavButtonType;
 
 @interface T4ViewController : UIViewController
-{
-    NavButtonType _navButtonType;
-}
 
 @property (nonatomic) NavButtonType leftNavButtonType;
 @property (nonatomic) NavButtonType rightNavButtonType;

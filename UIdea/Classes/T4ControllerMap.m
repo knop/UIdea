@@ -38,13 +38,13 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(T4ControllerMap)
     return self;
 }
 
-- (void)addClass:(Class)c
+- (void)registerControllerWithClass:(Class)c
 {
     NSString *key = NSStringFromClass(c);
     [_controllerDict setObject:c forKey:key];
 }
 
-- (void)show:(NSString *)className
+- (void)showWithClassName:(NSString *)className
 {
     Class c = [_controllerDict objectForKey:className];
     UIViewController *controller = [[c alloc] init];

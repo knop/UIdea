@@ -18,7 +18,7 @@ SYNTHESIZE_SINGLETON_FOR_HEADER(T4ControllerMap)
 
 + (UINavigationController *)globalNavgationController;
 
-- (void)addClass:(Class)c;
-- (void)show:(NSString *)className;
+- (void)registerControllerWithClass:(Class)c;
+- (void)showWithClassName:(NSString *)className;
 
 @end

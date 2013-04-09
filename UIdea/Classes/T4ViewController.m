@@ -8,8 +8,6 @@
 
 #import "T4ViewController.h"
 
-#define NAVIGATION_BAR_BTN_RECT CGRectMake(0.0f, 0.0f, 36.0f, 28.0f)
-
 @implementation T4ViewController
 
 - (void)dealloc
@@ -20,8 +18,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.  
-    //self addObserver:<#(NSObject *)#> forKeyPath:<#(NSString *)#> options:<#(NSKeyValueObservingOptions)#> context:<#(void *)#>
+    self.title = @"UIdea";
 }
 
 - (void)didReceiveMemoryWarning
@@ -32,12 +29,84 @@
 
 - (UIBarButtonItem *)createNavButtonWithType:(NavButtonType)type
 {
-    UIButton *hNavBtn = [[[UIButton alloc] initWithFrame:NAVIGATION_BAR_BTN_RECT] autorelease];
-    [hNavBtn setBackgroundImage:[UIImage imageNamed:@"nav_bar_button_normal"] forState:UIControlStateNormal];
-    [hNavBtn setBackgroundImage:[UIImage imageNamed:@"nav_bar_button_press"] forState:UIControlStateHighlighted];
-    UIBarButtonItem *hBtnItem = [[[UIBarButtonItem alloc] initWithCustomView:hNavBtn] autorelease];
-
-    return hBtnItem;
+    UIImage *normalIcon = nil;
+    switch (type) {
+        case NavButtonBack:
+            normalIcon = [UIImage imageNamed:@"nav_bar_image_back"];
+            break;
+        case NavButtonAdd:
+            normalIcon = [UIImage imageNamed:@"nav_bar_image_add"];
+            break;
+        case NavButtonSetting:
+            normalIcon = [UIImage imageNamed:@"nav_bar_image_setting"];
+            break;
+        default:
+            break;
+    }
+    
+    if (normalIcon == nil) {
+        return nil;
+    }
+    
+    UIImage *normalImage = [UIImage imageNamed:@"nav_bar_button_normal"];
+    UIImage *pressImage = [UIImage imageNamed:@"nav_bar_button_press"];
+    
+    CGFloat width = CGImageGetWidth(normalImage.CGImage) / 2.0f;
+    CGFloat height = CGImageGetHeight(normalImage.CGImage) / 2.0f;
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0.0f, 0.0f, width, height)];
+    [button setBackgroundImage:normalImage forState:UIControlStateNormal];
+    [button setBackgroundImage:pressImage forState:UIControlStateHighlighted];
+    [button setImage:normalIcon forState:UIControlStateNormal];
+    [button setImage:normalIcon forState:UIControlStateHighlighted];
+    
+    UIBarButtonItem *item = [[[UIBarButtonItem alloc] initWithCustomView:button] autorelease];
+    [button release];
+    return item;
 }
+
+- (void)setLeftNavButtonType:(NavButtonType)type
+{
+    _leftNavButtonType = type;
+    UIBarButtonItem *item = [self createNavButtonWithType:type];
+    if (item != nil) {
+        self.navigationItem.leftBarButtonItem = item;
+        UIButton *button = (UIButton *)item.customView;
+        [button addTarget:self
+                   action:@selector(onClickLeftNavBarButton)
+         forControlEvents:UIControlEventTouchUpInside];
+    }
+}
+
+- (void)setRightNavButtonType:(NavButtonType)type
+{
+    _rightNavButtonType = type;
+    UIBarButtonItem *item = [self createNavButtonWithType:type];
+    if (item != nil) {
+        self.navigationItem.rightBarButtonItem = item;
+        UIButton *button = (UIButton *)item.customView;
+        [button addTarget:self
+                   action:@selector(onClickRightNavBarButton)
+         forControlEvents:UIControlEventTouchUpInside];
+    }
+}
+
+- (void)onClickLeftNavBarButton
+{
+    NSLog(@"father-onClickLeftNavBarButton");
+    if (_leftNavButtonType == NavButtonBack) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
+- (void)onClickRightNavBarButton
+{
+    NSLog(@"father-onClickRightNavBarButton");
+    if (_leftNavButtonType == NavButtonBack) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
+@synthesize leftNavButtonType = _leftNavButtonType;
+@synthesize rightNavButtonType = _rightNavButtonType;
 
 @end
