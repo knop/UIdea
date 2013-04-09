@@ -26,8 +26,8 @@
     self.window.rootViewController = [T4ControllerMap globalNavgationController];
     [self.window makeKeyAndVisible];
     
-    [[T4ControllerMap sharedInstance] addClass:[T4MainViewController class]];
-    [[T4ControllerMap sharedInstance] show:@"T4MainViewController"];
+    [[T4ControllerMap sharedInstance] registerControllerWithClass:[T4MainViewController class]];
+    [[T4ControllerMap sharedInstance] showWithClassName:@"T4MainViewController"];
     
     return YES;
 }

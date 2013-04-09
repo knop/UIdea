@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "T4ViewController.h"
 
-@interface T4MainViewController : T4ViewController
+@interface T4MainViewController : T4ViewController<UITableViewDelegate, UITableViewDataSource>
 
-- (IBAction)onClickTest:(id)sender;
+@property (retain, nonatomic) IBOutlet UIView *emptyView;
+@property (retain, nonatomic) IBOutlet UITableView *dataTableView;
+@property (retain, nonatomic) IBOutlet UIView *dataView;
 
 @end
