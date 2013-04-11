@@ -8,6 +8,8 @@
 
 #import "T4TableViewCell.h"
 
+#define defCellHeight 70.0f
+
 @interface T4ProjectCell : T4TableViewCell
 
 

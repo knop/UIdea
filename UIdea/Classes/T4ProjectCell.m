@@ -16,6 +16,10 @@
     self = [super initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
+        self.textLabel.TextColor = DefFontColor1;
+        self.textLabel.highlightedTextColor = DefFontColor1;
+        self.detailTextLabel.TextColor = DefFontColor2;
+        self.detailTextLabel.highlightedTextColor = DefFontColor2;
     }
     return self;
 }
@@ -25,6 +29,15 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+    if (selected) {
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 70.0f)];
+        imageView.image = [UIImage imageNamed:@"main_project_cell_selected"];
+        self.selectedBackgroundView = imageView;
+        [imageView release];
+    } else {
+        self.selectedBackgroundView = nil;
+    }
+
 }
 
 - (void)setObject:(id)object

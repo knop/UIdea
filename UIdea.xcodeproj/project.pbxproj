@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B14738717156B4A00CC7A6F /* main_project_cell_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B14738617156B4A00CC7A6F /* main_project_cell_selected@2x.png */; };
 		4B79E7F8171165CE004C151A /* T4AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B79E7F7171165CE004C151A /* T4AppDelegate.m */; };
 		4B79E8141711CC83004C151A /* T4ControllerMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B79E8131711CC83004C151A /* T4ControllerMap.m */; };
 		4B79E817171262E9004C151A /* T4UIViewData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B79E816171262E9004C151A /* T4UIViewData.m */; };
@@ -48,6 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B14738617156B4A00CC7A6F /* main_project_cell_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_project_cell_selected@2x.png"; sourceTree = "<group>"; };
 		4B79E7F6171165CE004C151A /* T4AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T4AppDelegate.h; sourceTree = "<group>"; };
 		4B79E7F7171165CE004C151A /* T4AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T4AppDelegate.m; sourceTree = "<group>"; };
 		4B79E8121711CC83004C151A /* T4ControllerMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = T4ControllerMap.h; path = Classes/T4ControllerMap.h; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 		4BD814561714059D00E5A54A /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				4B14738617156B4A00CC7A6F /* main_project_cell_selected@2x.png */,
 				4BD34A4A17146AF000DEA8A7 /* main_project_cell_empty@2x.png */,
 				4BD34A4B17146AF000DEA8A7 /* main_project_cell_full@2x.png */,
 				4BD8146917141D4E00E5A54A /* main_table_view_block@2x.png */,
@@ -360,6 +363,7 @@
 				4BD8146C17141D4E00E5A54A /* main_table_view_list@2x.png in Resources */,
 				4BD34A4C17146AF000DEA8A7 /* main_project_cell_empty@2x.png in Resources */,
 				4BD34A4D17146AF000DEA8A7 /* main_project_cell_full@2x.png in Resources */,
+				4B14738717156B4A00CC7A6F /* main_project_cell_selected@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

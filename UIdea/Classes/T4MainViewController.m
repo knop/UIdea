@@ -14,6 +14,7 @@
 @interface T4MainViewController ()
 
 - (IBAction)onClickNew:(id)sender;
+- (void)initView;
 
 @end
 
@@ -32,9 +33,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.leftNavButtonType = NavButtonNone;
-    self.rightNavButtonType = NavButtonAdd;
-    
+    [self initView];
     [self refreshView];
 }
 
@@ -42,6 +41,16 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)initView
+{
+    self.leftNavButtonType = NavButtonNone;
+    self.rightNavButtonType = NavButtonAdd;
+    UIColor *bgColor = DefViewBGColor;
+    self.emptyView.backgroundColor = bgColor;
+    self.dataView.backgroundColor = bgColor;
+    self.dataTableView.backgroundColor = bgColor;
 }
 
 - (void)onClickLeftNavBarButton
@@ -88,7 +97,7 @@
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 44.0;
+    return defCellHeight;
 }
 
 #pragma mark - UITableViewDataSource
