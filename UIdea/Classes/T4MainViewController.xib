@@ -151,7 +151,7 @@
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 										<object class="NSCustomResource" key="IBUIImage">
 											<string key="NSClassName">NSImage</string>
-											<string key="NSResourceName">main_search_bg@2x.png</string>
+											<string key="NSResourceName">search_bar_bg@2x.png</string>
 										</object>
 									</object>
 									<object class="IBUIButton" id="1068498319">
@@ -178,16 +178,22 @@
 										<reference key="IBUIHighlightedTitleColor" ref="862469157"/>
 										<reference key="IBUINormalTitleColor" ref="862469157"/>
 										<reference key="IBUINormalTitleShadowColor" ref="156563635"/>
-										<object class="NSCustomResource" key="IBUIHighlightedImage" id="816294938">
+										<object class="NSCustomResource" key="IBUIHighlightedImage">
 											<string key="NSClassName">NSImage</string>
 											<string key="NSResourceName">main_search_icon@2x.png</string>
 										</object>
-										<reference key="IBUINormalImage" ref="816294938"/>
-										<object class="NSCustomResource" key="IBUIHighlightedBackgroundImage" id="690378839">
+										<object class="NSCustomResource" key="IBUINormalImage">
+											<string key="NSClassName">NSImage</string>
+											<string key="NSResourceName">search_icon@2x.png</string>
+										</object>
+										<object class="NSCustomResource" key="IBUIHighlightedBackgroundImage">
 											<string key="NSClassName">NSImage</string>
 											<string key="NSResourceName">main_search_input_bg@2x.png</string>
 										</object>
-										<reference key="IBUINormalBackgroundImage" ref="690378839"/>
+										<object class="NSCustomResource" key="IBUINormalBackgroundImage">
+											<string key="NSClassName">NSImage</string>
+											<string key="NSResourceName">search_input_bg@2x.png</string>
+										</object>
 										<object class="IBUIFontDescription" key="IBUIFontDescription">
 											<int key="type">2</int>
 											<double key="pointSize">14</double>
@@ -244,11 +250,13 @@
 								<string key="NSFrame">{{0, 53}, {320, 407}}</string>
 								<reference key="NSSuperview" ref="613250766"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<reference key="IBUIBackgroundColor" ref="908644811"/>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<bool key="IBUIAlwaysBounceVertical">YES</bool>
+								<int key="IBUISeparatorStyle">1</int>
 								<int key="IBUISectionIndexMinimumDisplayRowCount">0</int>
 								<bool key="IBUIShowsSelectionImmediatelyOnTouchBegin">YES</bool>
 								<float key="IBUIRowHeight">44</float>
@@ -465,7 +473,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">25</int>
+			<int key="maxID">27</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -526,10 +534,12 @@
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="main_add_project@2x.png">{258, 258}</string>
-			<string key="main_search_bg@2x.png">{1, 88}</string>
-			<string key="main_search_icon@2x.png">{30, 30}</string>
-			<string key="main_search_input_bg@2x.png">{484, 59}</string>
+			<string key="main_search_icon@2x.png">{16, 16}</string>
+			<string key="main_search_input_bg@2x.png">{16, 16}</string>
 			<string key="main_table_view_list@2x.png">{40, 40}</string>
+			<string key="search_bar_bg@2x.png">{1, 88}</string>
+			<string key="search_icon@2x.png">{30, 30}</string>
+			<string key="search_input_bg@2x.png">{484, 59}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">2083</string>
 	</data>

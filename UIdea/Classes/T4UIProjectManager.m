@@ -28,6 +28,7 @@
     project.name = [NSString stringWithFormat:@"Demo %d", count];
     project.description = [NSString stringWithFormat:@"Demo %d description", count];
     project.viewCount = 0;
+    [project addSubProjects];
     [_projects addObject:project];
     count++;
     [project release];

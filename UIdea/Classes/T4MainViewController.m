@@ -10,6 +10,7 @@
 #import "T4ControllerMap.h"
 #import "T4UIProjectManager.h"
 #import "T4ProjectCell.h"
+#import "T4UIProject.h"
 
 @interface T4MainViewController ()
 
@@ -110,6 +111,7 @@
     T4_RELEASE_SAFELY(_emptyView);
     T4_RELEASE_SAFELY(_dataTableView);
     T4_RELEASE_SAFELY(_dataView);
+    T4_RELEASE_SAFELY(_projectManager);
     [super dealloc];
 }
 
@@ -119,16 +121,36 @@
     return defCellHeight;
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    T4UIProject *project = [_projectManager.projects objectAtIndex:section];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 18)];
+    label.text = project.name;
+    label.textAlignment = NSTextAlignmentCenter;
+    label.backgroundColor = DefFontColor4;
+    label.textColor = DefFontColor6;
+    label.shadowColor = DefShadowColor1;
+    label.shadowOffset = DefShadowOffset1;
+    return label;
+}
+
 #pragma mark - UITableViewDataSource
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return _projectManager.projects.count;
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    T4UIProject *project = [_projectManager.projects objectAtIndex:section];
+    return project.subProjects.count;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    T4UIProject *project = [_projectManager.projects objectAtIndex:indexPath.section];    
     T4ProjectCell *cell = [[T4ProjectCell alloc] init];
-    id object = [_projectManager.projects objectAtIndex:indexPath.row];
+    id object = [project.subProjects objectAtIndex:indexPath.row];
     [cell setObject:object];
     return cell;
 }

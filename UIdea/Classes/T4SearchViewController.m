@@ -41,13 +41,10 @@
 - (IBAction)onClickCancel:(id)sender
 {
     [self.view removeFromSuperview];
-//    NSLog(@"11111");
-//    [self removeFromParentViewController];
-    
 }
 
 - (void)dealloc {
-    [_dataTableView release];
+    T4_RELEASE_SAFELY(_dataTableView);
     [super dealloc];
 }
 @end
