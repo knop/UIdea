@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B0CEAC51717D72500B1589E /* T4SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B0CEAC31717D72500B1589E /* T4SearchViewController.m */; };
+		4B0CEAC61717D72500B1589E /* T4SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B0CEAC41717D72500B1589E /* T4SearchViewController.xib */; };
+		4B0CEACA1717DEE000B1589E /* search_button_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B0CEAC81717DEE000B1589E /* search_button_normal@2x.png */; };
+		4B0CEACB1717DEE000B1589E /* search_button_press@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B0CEAC91717DEE000B1589E /* search_button_press@2x.png */; };
 		4B14738717156B4A00CC7A6F /* main_project_cell_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B14738617156B4A00CC7A6F /* main_project_cell_selected@2x.png */; };
 		4B79E7F8171165CE004C151A /* T4AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B79E7F7171165CE004C151A /* T4AppDelegate.m */; };
 		4B79E8141711CC83004C151A /* T4ControllerMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B79E8131711CC83004C151A /* T4ControllerMap.m */; };
@@ -49,6 +53,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B0CEAC21717D72500B1589E /* T4SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = T4SearchViewController.h; path = Classes/T4SearchViewController.h; sourceTree = "<group>"; };
+		4B0CEAC31717D72500B1589E /* T4SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = T4SearchViewController.m; path = Classes/T4SearchViewController.m; sourceTree = "<group>"; };
+		4B0CEAC41717D72500B1589E /* T4SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = T4SearchViewController.xib; path = Classes/T4SearchViewController.xib; sourceTree = "<group>"; };
+		4B0CEAC81717DEE000B1589E /* search_button_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search_button_normal@2x.png"; sourceTree = "<group>"; };
+		4B0CEAC91717DEE000B1589E /* search_button_press@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search_button_press@2x.png"; sourceTree = "<group>"; };
 		4B14738617156B4A00CC7A6F /* main_project_cell_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_project_cell_selected@2x.png"; sourceTree = "<group>"; };
 		4B79E7F6171165CE004C151A /* T4AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T4AppDelegate.h; sourceTree = "<group>"; };
 		4B79E7F7171165CE004C151A /* T4AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T4AppDelegate.m; sourceTree = "<group>"; };
@@ -123,12 +132,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B0CEAC71717DEE000B1589E /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				4B0CEAC81717DEE000B1589E /* search_button_normal@2x.png */,
+				4B0CEAC91717DEE000B1589E /* search_button_press@2x.png */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		4B79E7F2171155F3004C151A /* Images */ = {
 			isa = PBXGroup;
 			children = (
 				4B8B726F170BD11C00C47854 /* Default.png */,
 				4B8B7271170BD11C00C47854 /* Default@2x.png */,
 				4B8B7273170BD11C00C47854 /* Default-568h@2x.png */,
+				4B0CEAC71717DEE000B1589E /* Search */,
 				4BD814561714059D00E5A54A /* Main */,
 				4B79E8351712C61F004C151A /* Common */,
 			);
@@ -276,6 +295,9 @@
 				4B79E82C1712B77D004C151A /* T4MainViewController.h */,
 				4B79E82D1712B77D004C151A /* T4MainViewController.m */,
 				4B79E82E1712B77E004C151A /* T4MainViewController.xib */,
+				4B0CEAC21717D72500B1589E /* T4SearchViewController.h */,
+				4B0CEAC31717D72500B1589E /* T4SearchViewController.m */,
+				4B0CEAC41717D72500B1589E /* T4SearchViewController.xib */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -364,6 +386,9 @@
 				4BD34A4C17146AF000DEA8A7 /* main_project_cell_empty@2x.png in Resources */,
 				4BD34A4D17146AF000DEA8A7 /* main_project_cell_full@2x.png in Resources */,
 				4B14738717156B4A00CC7A6F /* main_project_cell_selected@2x.png in Resources */,
+				4B0CEAC61717D72500B1589E /* T4SearchViewController.xib in Resources */,
+				4B0CEACA1717DEE000B1589E /* search_button_normal@2x.png in Resources */,
+				4B0CEACB1717DEE000B1589E /* search_button_press@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +414,7 @@
 				4BD8145F1714086500E5A54A /* T4UIProjectManager.m in Sources */,
 				4BD34A461714650800DEA8A7 /* T4ProjectCell.m in Sources */,
 				4BD34A491714676200DEA8A7 /* T4TableViewCell.m in Sources */,
+				4B0CEAC51717D72500B1589E /* T4SearchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

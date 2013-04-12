@@ -45,11 +45,38 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(T4ControllerMap)
 }
 
 - (void)showWithClassName:(NSString *)className
+                    style:(ShowStyle)style
+                animation:(AnimationBlock)animation
 {
-    Class c = [_controllerDict objectForKey:className];
-    UIViewController *controller = [[c alloc] init];
-    [[T4ControllerMap globalNavgationController] pushViewController:controller animated:YES];
-    [controller release];
+    UINavigationController *navigationController = [T4ControllerMap globalNavgationController];
+    if (style == ShowStyleAdd) {
+        Class c = [_controllerDict objectForKey:className];
+        UIViewController *controller = [[c alloc] init];
+        [navigationController addChildViewController:controller];
+        [controller release];
+        if (animation != nil) {
+            animation(controller);
+        } else {
+            CGSize size = controller.view.frame.size;
+            controller.view.frame = CGRectMake(0,20.0f,size.width,size.height);            
+        }
+        [navigationController.view addSubview:controller.view];
+    } else {
+        Class c = [_controllerDict objectForKey:className];
+        UIViewController *controller = [[c alloc] init];
+        [navigationController pushViewController:controller animated:YES];
+        [controller release];
+    }
+}
+
+- (void)showWithClassName:(NSString *)className style:(ShowStyle)style
+{
+    [self showWithClassName:className style:style animation:nil];
+}
+
+- (void)showWithClassName:(NSString *)className
+{
+    [self showWithClassName:className style:ShowStylePush];
 }
 
 @end

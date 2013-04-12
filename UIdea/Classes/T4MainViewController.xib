@@ -157,7 +157,7 @@
 									<object class="IBUIButton" id="1068498319">
 										<reference key="NSNextResponder" ref="317595859"/>
 										<int key="NSvFlags">292</int>
-										<string key="NSFrame">{{12, 13}, {242, 30}}</string>
+										<string key="NSFrame">{{10, 13}, {242, 30}}</string>
 										<reference key="NSSuperview" ref="317595859"/>
 										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="150292963"/>
@@ -172,8 +172,8 @@
 										<double key="IBUITitleEdgeInsets.right">150</double>
 										<double key="IBUIImageEdgeInsets.top">7</double>
 										<double key="IBUIImageEdgeInsets.bottom">7</double>
-										<double key="IBUIImageEdgeInsets.left">7</double>
-										<double key="IBUIImageEdgeInsets.right">220</double>
+										<double key="IBUIImageEdgeInsets.left">10</double>
+										<double key="IBUIImageEdgeInsets.right">217</double>
 										<string key="IBUINormalTitle">搜索作品</string>
 										<reference key="IBUIHighlightedTitleColor" ref="862469157"/>
 										<reference key="IBUINormalTitleColor" ref="862469157"/>
@@ -201,7 +201,7 @@
 									<object class="IBUIButton" id="150292963">
 										<reference key="NSNextResponder" ref="317595859"/>
 										<int key="NSvFlags">292</int>
-										<string key="NSFrame">{{280, 17}, {20, 20}}</string>
+										<string key="NSFrame">{{276, 17}, {20, 20}}</string>
 										<reference key="NSSuperview" ref="317595859"/>
 										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="73519390"/>
@@ -336,6 +336,15 @@
 					</object>
 					<int key="connectionID">21</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">onClickSearch:</string>
+						<reference key="source" ref="1068498319"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">25</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -456,24 +465,27 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">24</int>
+			<int key="maxID">25</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<object class="IBPartialClassDescription">
 					<string key="className">T4MainViewController</string>
 					<string key="superclassName">T4ViewController</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">onClickNew:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">onClickNew:</string>
-						<object class="IBActionInfo" key="NS.object.0">
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="onClickNew:">id</string>
+						<string key="onClickSearch:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="onClickNew:">
 							<string key="name">onClickNew:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-					</object>
+						<object class="IBActionInfo" key="onClickSearch:">
+							<string key="name">onClickSearch:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="dataTableView">UITableView</string>
 						<string key="dataView">UIView</string>

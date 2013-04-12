@@ -14,6 +14,7 @@
 @interface T4MainViewController ()
 
 - (IBAction)onClickNew:(id)sender;
+- (IBAction)onClickSearch:(id)sender;
 - (void)initView;
 
 @end
@@ -67,6 +68,24 @@
 - (IBAction)onClickNew:(id)sender
 {
     [self newProject];
+}
+
+- (IBAction)onClickSearch:(id)sender
+{
+    [[T4ControllerMap sharedInstance] showWithClassName:@"T4SearchViewController"
+                                                  style:ShowStyleAdd
+                                              animation:^(UIViewController *controller) {
+                                                      controller.view.alpha = 0.3f;
+                                                      CGSize size = controller.view.frame.size;
+                                                      controller.view.frame = CGRectMake(0,77.0f,size.width,size.height);
+                                                      [UIView beginAnimations:nil context:nil];
+                                                      [UIView setAnimationDelegate:self];
+                                                      [UIView setAnimationDuration:0.2];
+                                                      [UIView setAnimationCurve:UIViewAnimationCurveLinear];
+                                                      controller.view.alpha = 1.0f;
+                                                      controller.view.frame = CGRectMake(0,20.0f,size.width,size.height);
+                                                      [UIView commitAnimations];
+                                                  }];
 }
 
 - (void)refreshView
