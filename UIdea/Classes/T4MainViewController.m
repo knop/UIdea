@@ -7,10 +7,12 @@
 //
 
 #import "T4MainViewController.h"
-#import "T4ControllerMap.h"
+#import "T4ControllerManager.h"
 #import "T4UIProjectManager.h"
 #import "T4ProjectCell.h"
 #import "T4UIProject.h"
+
+#define defSectionHeight 18
 
 @interface T4MainViewController ()
 
@@ -73,20 +75,22 @@
 
 - (IBAction)onClickSearch:(id)sender
 {
-    [[T4ControllerMap sharedInstance] showWithClassName:@"T4SearchViewController"
+    [[T4ControllerManager sharedInstance] showWithClassName:@"T4SearchViewController"
                                                   style:ShowStyleAdd
                                               animation:^(UIViewController *controller) {
-                                                      controller.view.alpha = 0.3f;
-                                                      CGSize size = controller.view.frame.size;
-                                                      controller.view.frame = CGRectMake(0,77.0f,size.width,size.height);
-                                                      [UIView beginAnimations:nil context:nil];
-                                                      [UIView setAnimationDelegate:self];
-                                                      [UIView setAnimationDuration:0.2];
-                                                      [UIView setAnimationCurve:UIViewAnimationCurveLinear];
-                                                      controller.view.alpha = 1.0f;
-                                                      controller.view.frame = CGRectMake(0,20.0f,size.width,size.height);
-                                                      [UIView commitAnimations];
-                                                  }];
+                                                  CGFloat beginY = 77.0f;
+                                                  CGFloat endY = 20.0f;
+                                                  controller.view.alpha = 0.3f;
+                                                  CGSize size = controller.view.frame.size;
+                                                  controller.view.frame = CGRectMake(0,beginY,size.width,size.height);
+                                                  [UIView beginAnimations:nil context:nil];
+                                                  [UIView setAnimationDelegate:self];
+                                                  [UIView setAnimationDuration:0.2];
+                                                  [UIView setAnimationCurve:UIViewAnimationCurveLinear];
+                                                  controller.view.alpha = 1.0f;
+                                                  controller.view.frame = CGRectMake(0,endY,size.width,size.height);
+                                                  [UIView commitAnimations];
+                                              }];
 }
 
 - (void)refreshView
@@ -116,15 +120,20 @@
 }
 
 #pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [[T4ControllerManager sharedInstance] showWithClassName:@"T4ProjectViewController"];
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return defCellHeight;
+    return DefProjectCellHeight;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     T4UIProject *project = [_projectManager.projects objectAtIndex:section];
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 18)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, DefScreenWidth, defSectionHeight)];
     label.text = project.name;
     label.textAlignment = NSTextAlignmentCenter;
     label.backgroundColor = DefFontColor4;
@@ -149,7 +158,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     T4UIProject *project = [_projectManager.projects objectAtIndex:indexPath.section];    
-    T4ProjectCell *cell = [[T4ProjectCell alloc] init];
+    T4TableViewCell *cell = [[[T4ProjectCell alloc] init] autorelease];
     id object = [project.subProjects objectAtIndex:indexPath.row];
     [cell setObject:object];
     return cell;

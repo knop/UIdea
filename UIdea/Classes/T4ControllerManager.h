@@ -1,5 +1,5 @@
 //
-//  T4ControllerMap.h
+//  T4ControllerManager.h
 //  UIdea
 //
 //  Created by Xiaohui on 13-4-7.
@@ -13,16 +13,19 @@ typedef enum {
 
 typedef void (^AnimationBlock)(UIViewController *controller);
 
-@interface T4ControllerMap : NSObject
+@interface T4ControllerManager : NSObject
 {
     NSMutableDictionary *_controllerDict;
 }
 
-SYNTHESIZE_SINGLETON_FOR_HEADER(T4ControllerMap)
+@property (nonatomic, retain) UIViewController *currentController;
+
+SYNTHESIZE_SINGLETON_FOR_HEADER(T4ControllerManager)
 
 + (UINavigationController *)globalNavgationController;
 
-- (void)registerControllerWithClass:(Class)c;
+- (void)registerControllers;
+//- (void)registerControllerWithClass:(Class)c;
 - (void)showWithClassName:(NSString *)className;
 - (void)showWithClassName:(NSString *)className
                     style:(ShowStyle)style;

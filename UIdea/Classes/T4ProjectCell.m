@@ -30,14 +30,12 @@
 
     // Configure the view for the selected state
     if (selected) {
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 70.0f)];
-        imageView.image = [UIImage imageNamed:@"main_project_cell_selected"];
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"main_project_cell_selected"]];
         self.selectedBackgroundView = imageView;
         [imageView release];
     } else {
         self.selectedBackgroundView = nil;
     }
-
 }
 
 - (void)setObject:(id)object

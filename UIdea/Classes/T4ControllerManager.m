@@ -1,16 +1,19 @@
 //
-//  T4ControllerMap.m
+//  T4ControllerManager.m
 //  UIdea
 //
 //  Created by Xiaohui on 13-4-7.
 //  Copyright (c) 2013年 Team4. All rights reserved.
 //
 
-#import "T4ControllerMap.h"
+#import "T4ControllerManager.h"
+#import "T4MainViewController.h"
+#import "T4SearchViewController.h"
+#import "T4ProjectViewController.h"
 
 static UINavigationController *sNavgationController;
 
-@implementation T4ControllerMap
+@implementation T4ControllerManager
 
 + (UINavigationController *)globalNavgationController
 {
@@ -26,7 +29,7 @@ static UINavigationController *sNavgationController;
     return sNavgationController;
 }
 
-SYNTHESIZE_SINGLETON_FOR_CLASS(T4ControllerMap)
+SYNTHESIZE_SINGLETON_FOR_CLASS(T4ControllerManager)
 
 - (id)init
 {
@@ -36,6 +39,13 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(T4ControllerMap)
     }
     
     return self;
+}
+
+- (void)registerControllers
+{
+    [self registerControllerWithClass:[T4MainViewController class]];
+    [self registerControllerWithClass:[T4SearchViewController class]];
+    [self registerControllerWithClass:[T4ProjectViewController class]];
 }
 
 - (void)registerControllerWithClass:(Class)c
@@ -48,7 +58,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(T4ControllerMap)
                     style:(ShowStyle)style
                 animation:(AnimationBlock)animation
 {
-    UINavigationController *navigationController = [T4ControllerMap globalNavgationController];
+    UINavigationController *navigationController = [T4ControllerManager globalNavgationController];
     if (style == ShowStyleAdd) {
         Class c = [_controllerDict objectForKey:className];
         UIViewController *controller = [[c alloc] init];

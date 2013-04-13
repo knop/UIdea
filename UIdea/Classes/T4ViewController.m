@@ -19,6 +19,8 @@
 {
     [super viewDidLoad];
     self.title = @"UIdea";
+    self.leftNavButtonType = NavButtonBack;
+    self.view.backgroundColor = DefViewBGColor;
 }
 
 - (void)didReceiveMemoryWarning
@@ -68,8 +70,8 @@
 {
     _leftNavButtonType = type;
     UIBarButtonItem *item = [self createNavButtonWithType:type];
+    self.navigationItem.leftBarButtonItem = item;
     if (item != nil) {
-        self.navigationItem.leftBarButtonItem = item;
         UIButton *button = (UIButton *)item.customView;
         [button addTarget:self
                    action:@selector(onClickLeftNavBarButton)
@@ -81,8 +83,8 @@
 {
     _rightNavButtonType = type;
     UIBarButtonItem *item = [self createNavButtonWithType:type];
+    self.navigationItem.rightBarButtonItem = item;
     if (item != nil) {
-        self.navigationItem.rightBarButtonItem = item;
         UIButton *button = (UIButton *)item.customView;
         [button addTarget:self
                    action:@selector(onClickRightNavBarButton)
@@ -101,7 +103,7 @@
 - (void)onClickRightNavBarButton
 {
     NSLog(@"father-onClickRightNavBarButton");
-    if (_leftNavButtonType == NavButtonBack) {
+    if (_rightNavButtonType == NavButtonBack) {
         [self.navigationController popViewControllerAnimated:YES];
     }
 }

@@ -7,6 +7,7 @@
 //
 
 #import "T4SearchViewController.h"
+#import "T4SearchCell.h"
 
 @interface T4SearchViewController ()
 
@@ -40,11 +41,52 @@
 
 - (IBAction)onClickCancel:(id)sender
 {
+    CGFloat endY = 77.0f;
+    CGSize size = self.view.frame.size;
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDelegate:self];
+    [UIView setAnimationDuration:0.2];
+    [UIView setAnimationCurve:UIViewAnimationCurveLinear];
+    [UIView setAnimationDidStopSelector:@selector(disappearView)];
+    self.view.alpha = 0.3f;
+    self.view.frame = CGRectMake(0,endY,size.width,size.height);
+    [UIView commitAnimations];
+}
+
+- (void)disappearView
+{
     [self.view removeFromSuperview];
+    [self removeFromParentViewController];
 }
 
 - (void)dealloc {
     T4_RELEASE_SAFELY(_dataTableView);
     [super dealloc];
 }
+
+
+#pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return DefSearchCellHeight;
+}
+
+#pragma mark - UITableViewDataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 2;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    T4SearchCell *cell = [[[T4SearchCell alloc] init] autorelease];
+    [cell setObject:nil];
+    return cell;
+}
+
 @end

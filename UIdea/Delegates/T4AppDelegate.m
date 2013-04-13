@@ -7,9 +7,7 @@
 //
 
 #import "T4AppDelegate.h"
-#import "T4ControllerMap.h"
-#import "T4MainViewController.h"
-#import "T4SearchViewController.h"
+#import "T4ControllerManager.h"
 
 @implementation T4AppDelegate
 
@@ -19,23 +17,17 @@
     [super dealloc];
 }
 
-- (void)registerController
-{
-    [[T4ControllerMap sharedInstance] registerControllerWithClass:[T4MainViewController class]];
-    [[T4ControllerMap sharedInstance] registerControllerWithClass:[T4SearchViewController class]];
-}
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     self.window.backgroundColor = DefViewBGColor;
-    self.window.rootViewController = [T4ControllerMap globalNavgationController];
+    self.window.rootViewController = [T4ControllerManager globalNavgationController];
     [self.window makeKeyAndVisible];
     
-    [self registerController];
-    
-    [[T4ControllerMap sharedInstance] showWithClassName:@"T4MainViewController"];
+    T4ControllerManager *controllerManager = [T4ControllerManager sharedInstance];
+    [controllerManager registerControllers];
+    [controllerManager showWithClassName:@"T4MainViewController"];
     
     return YES;
 }

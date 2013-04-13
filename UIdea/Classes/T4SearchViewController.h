@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface T4SearchViewController : UIViewController
+@interface T4SearchViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
 @property (retain, nonatomic) IBOutlet UITableView *dataTableView;
 
