@@ -22,9 +22,11 @@
 #define DefFontColor6 [UIColor whiteColor]
 
 #define DefViewBGColor [UIColor colorWithRed:230.0f/255.0f green:230.0f/255.0f blue:230.0f/255.0f alpha:1.0f]
-#define DefSearchCellColor [UIColor colorWithRed:170.0f/255.0f green:170.0f/255.0f blue:170.0f/255.0f alpha:1.0f]
+#define DefSearchCellColor [UIColor colorWithRed:210.0f/255.0f green:217.0f/255.0f blue:224.0f/255.0f alpha:1.0f]
+#define DefTitleColor [UIColor colorWithRed:210.0f/255.0f green:217.0f/255.0f blue:224.0f/255.0f alpha:1.0f]
 
 #define DefShadowColor1 [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:0.5f]
+#define DefShadowColor2 [UIColor colorWithRed:56.0f/255.0f green:103.0f/255.0f blue:146.0f/255.0f alpha:0.75f]
 
 #pragma mark - Shadow offset
 
@@ -32,7 +34,7 @@
 
 #pragma mark - Font Size
 
-#define DefFontSize1 40
+#define DefFontSize1 20
 #define DefFontSize2 30
 #define DefFontSize3 28
 #define DefFontSize4 26

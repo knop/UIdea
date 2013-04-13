@@ -14,8 +14,13 @@ typedef enum {
 } NavButtonType;
 
 @interface T4ViewController : UIViewController
+{
+    UILabel *_titleLabel;
+    UIImageView *_clickableView;
+}
 
 @property (nonatomic) NavButtonType leftNavButtonType;
 @property (nonatomic) NavButtonType rightNavButtonType;
+@property (nonatomic) BOOL clickable;
 
 @end

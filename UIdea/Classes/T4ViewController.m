@@ -10,8 +10,34 @@
 
 @implementation T4ViewController
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        CGRect rect = CGRectMake(0, 0, 200, 44);
+        
+        UIView *view = [[UIView alloc] initWithFrame:rect];
+        _titleLabel = [[UILabel alloc] initWithFrame:rect];
+        _titleLabel.backgroundColor = [UIColor clearColor];
+        _titleLabel.textAlignment = NSTextAlignmentCenter;
+        _titleLabel.text = @"UIdea";
+        _titleLabel.textColor = DefTitleColor;
+        _titleLabel.shadowColor = DefShadowColor2;
+        _titleLabel.shadowOffset = DefShadowOffset1;
+        _titleLabel.font = [UIFont systemFontOfSize:DefFontSize1];
+        [view addSubview:_titleLabel];
+        
+        self.navigationItem.titleView = view;
+        [view release];
+    }
+    
+    return self;
+}
+
 - (void)dealloc
 {
+    T4_RELEASE_SAFELY(_titleLabel);
+    T4_RELEASE_SAFELY(_clickableView);
     [super dealloc];
 }
 
@@ -79,6 +105,26 @@
     }
 }
 
+- (void)setClickable:(BOOL)clickable
+{
+    _clickable = clickable;
+    if (_clickable) {
+        CGRect parentViewFrame = self.navigationItem.titleView.frame;
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nav_bar_edit"]];
+        CGRect imageFrame = imageView.frame;
+        CGFloat x = (parentViewFrame.size.width - imageFrame.size.width) / 2;
+        CGFloat y = parentViewFrame.size.height - imageFrame.size.height - 3.0f;
+        imageView.frame = CGRectMake(x, y, imageFrame.size.width, imageFrame.size.height);
+        [self.navigationItem.titleView addSubview:imageView];
+        [imageView release];
+        
+        UIButton *button = [[UIButton alloc] initWithFrame:parentViewFrame];
+        [button addTarget:self action:@selector(onClickTitle) forControlEvents:UIControlEventTouchUpInside];
+        [self.navigationItem.titleView addSubview:button];
+        [button release];
+    }
+}
+
 - (void)setRightNavButtonType:(NavButtonType)type
 {
     _rightNavButtonType = type;
@@ -108,7 +154,13 @@
     }
 }
 
+- (void)onClickTitle
+{
+    NSLog(@"father-onClickTitle");
+}
+
 @synthesize leftNavButtonType = _leftNavButtonType;
 @synthesize rightNavButtonType = _rightNavButtonType;
+@synthesize clickable = _clickable;
 
 @end

@@ -25,7 +25,6 @@ SYNTHESIZE_SINGLETON_FOR_HEADER(T4ControllerManager)
 + (UINavigationController *)globalNavgationController;
 
 - (void)registerControllers;
-//- (void)registerControllerWithClass:(Class)c;
 - (void)showWithClassName:(NSString *)className;
 - (void)showWithClassName:(NSString *)className
                     style:(ShowStyle)style;

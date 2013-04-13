@@ -54,6 +54,7 @@
 		4BD8145F1714086500E5A54A /* T4UIProjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD8145E1714086500E5A54A /* T4UIProjectManager.m */; };
 		4BD8146B17141D4E00E5A54A /* main_table_view_block@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BD8146917141D4E00E5A54A /* main_table_view_block@2x.png */; };
 		4BD8146C17141D4E00E5A54A /* main_table_view_list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BD8146A17141D4E00E5A54A /* main_table_view_list@2x.png */; };
+		4BDD97D017196EC30023E20C /* T4Dialog.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4BDD97CF17196EC30023E20C /* T4Dialog.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,6 +127,8 @@
 		4BD8145E1714086500E5A54A /* T4UIProjectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = T4UIProjectManager.m; path = Classes/T4UIProjectManager.m; sourceTree = "<group>"; };
 		4BD8146917141D4E00E5A54A /* main_table_view_block@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_table_view_block@2x.png"; sourceTree = "<group>"; };
 		4BD8146A17141D4E00E5A54A /* main_table_view_list@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_table_view_list@2x.png"; sourceTree = "<group>"; };
+		4BDD97CE17196EC30023E20C /* T4Dialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = T4Dialog.h; path = Classes/UIKit/T4Dialog.h; sourceTree = "<group>"; };
+		4BDD97CF17196EC30023E20C /* T4Dialog.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = T4Dialog.mm; path = Classes/UIKit/T4Dialog.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +204,7 @@
 		4B79E8111711CC37004C151A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				4BDD97CD17196E600023E20C /* UIKit */,
 				4B0CEADD1718113000B1589E /* UIDesign */,
 				4BD814601714182200E5A54A /* Cell */,
 				4BD81459171407B900E5A54A /* Controller */,
@@ -337,6 +341,15 @@
 			name = Cell;
 			sourceTree = "<group>";
 		};
+		4BDD97CD17196E600023E20C /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				4BDD97CE17196EC30023E20C /* T4Dialog.h */,
+				4BDD97CF17196EC30023E20C /* T4Dialog.mm */,
+			);
+			name = UIKit;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -443,6 +456,7 @@
 				4B0CEAC51717D72500B1589E /* T4SearchViewController.m in Sources */,
 				4BC5DA4A1718DDD800A90BA0 /* T4ProjectViewController.m in Sources */,
 				4BC5DA4E1718EDBC00A90BA0 /* T4SearchCell.m in Sources */,
+				4BDD97D017196EC30023E20C /* T4Dialog.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
