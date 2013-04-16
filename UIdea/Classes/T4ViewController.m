@@ -24,7 +24,7 @@
         _titleLabel.textColor = DefTitleColor;
         _titleLabel.shadowColor = DefShadowColor2;
         _titleLabel.shadowOffset = DefShadowOffset1;
-        _titleLabel.font = [UIFont systemFontOfSize:DefFontSize1];
+        _titleLabel.font = DefFont40;
         [view addSubview:_titleLabel];
         
         self.navigationItem.titleView = view;

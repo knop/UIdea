@@ -11,6 +11,7 @@
 #import "T4UIProjectManager.h"
 #import "T4ProjectCell.h"
 #import "T4UIProject.h"
+#import "T4Toast.h"
 
 #define defSectionHeight 18
 
@@ -91,6 +92,11 @@
                                                   controller.view.frame = CGRectMake(0,endY,size.width,size.height);
                                                   [UIView commitAnimations];
                                               }];
+}
+
+- (IBAction)onClickTest:(id)sender
+{
+    [T4Toast showWithText:@"陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮"];
 }
 
 - (void)refreshView

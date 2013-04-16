@@ -250,7 +250,6 @@
 								<string key="NSFrame">{{0, 53}, {320, 407}}</string>
 								<reference key="NSSuperview" ref="613250766"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<reference key="IBUIBackgroundColor" ref="908644811"/>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -334,6 +333,15 @@
 						<reference key="destination" ref="372490531"/>
 					</object>
 					<int key="connectionID">23</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">onClickTest:</string>
+						<reference key="source" ref="150292963"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">28</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -473,7 +481,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">27</int>
+			<int key="maxID">28</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -483,6 +491,7 @@
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="onClickNew:">id</string>
 						<string key="onClickSearch:">id</string>
+						<string key="onClickTest:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="onClickNew:">
@@ -491,6 +500,10 @@
 						</object>
 						<object class="IBActionInfo" key="onClickSearch:">
 							<string key="name">onClickSearch:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="onClickTest:">
+							<string key="name">onClickTest:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 					</dictionary>

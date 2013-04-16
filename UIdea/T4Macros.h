@@ -34,10 +34,10 @@
 
 #pragma mark - Font Size
 
-#define DefFontSize1 20
-#define DefFontSize2 30
-#define DefFontSize3 28
-#define DefFontSize4 26
+#define DefFont40 [UIFont boldSystemFontOfSize:20]
+#define DefFont30 [UIFont boldSystemFontOfSize:15]
+#define DefFont28 [UIFont boldSystemFontOfSize:14]
+#define DefFont26 [UIFont boldSystemFontOfSize:13]
 
 #pragma mark - cell height
 

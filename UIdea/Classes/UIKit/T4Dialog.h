@@ -1,102 +1,57 @@
 //
 //  T4Dialog.h
-//  iphone
+//  UIdea
 //
-//  Created by xiaohui on 12-10-18.
-//
+//  Created by Xiaohui on 13-4-16.
+//  Copyright (c) 2013年 Team4. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "TvButton.h"
 
 typedef enum {
-    TvDialogTypeWithTwoButton   = 1,
-    TvDialogTypeWithOneButton   = 2,
-    TvDialogTypeWaiting   = 3,
-} TvDialogType;
+    T4DialogTypeEdit   = 1,
+    T4DialogTypeOptions   = 2,
+} T4DialogType;
 
 typedef enum {
-    TvToastTypeBottom = 1,
-    TvToastTypeMiddle = 2,
-} TvToastType;
+    T4DialogResultTypePositive = 1,
+    T4DialogResultTypeNegative = 2,
+    T4DialogResultTypeCancel = 3,
+} T4DialogResultType;
 
-typedef enum {
-    TvDialogResultTypePositive = 1,
-    TvDialogResultTypeNegative = 2,
-    TvDialogResultTypeCancel = 3,
-} TvDialogResultType;
+typedef void (^DialogBlock)(T4DialogResultType result);
 
-typedef void (^DialogBlock)(TvDialogResultType result);
-
-@class TvDialogBuilder;
-
-@interface T4Dialog : UIView
-{
-    TvDialogBuilder * builder;
-    UIView *coverView;
-    CGFloat angle;
-    
-    UIView* animationView;
-    
-    BOOL displaying;
-}
-
-- (id)initWithFrame:(CGRect)frame builder:(TvDialogBuilder *)newBuilder;
-- (TvDialog *)show;
-- (void)dismiss;
-
-
-+ (TvDialog *)showDialogWithText:(NSString *)text;
-+ (TvDialog *)showDialogWithText:(NSString *)text ButtonText:(NSString*)btnText;
-+ (TvDialog *)showDialogWithText:(NSString *)text resultBlock:(DialogBlock)block;
-+ (TvDialog *)showDialogWithText:(NSString *)text
-                            type:(TvDialogType)type
-                     resultBlock:(DialogBlock)block;
-+ (TvDialog *)showDialogWithText:(NSString *)text
-                            type:(TvDialogType)type
-                          parent:(UIView *)parent
-                     resultBlock:(DialogBlock)block;
-
-+ (TvDialog *)showWaitingDialog;
-+ (TvDialog *)showWaitingDialogWithBlock:(DialogBlock)block;
-+ (TvDialog *)showWaitingDialog:(NSString *)text;
-+ (TvDialog *)showWaitingDialog:(NSString *)text resultBlock:(DialogBlock)block;
-
-+ (TvDialog *)showDialogWithCancel:(NSString *)text;
-+ (TvDialog *)showDialogWithCancel:(NSString *)text resultBlock:(DialogBlock)block;
-
-+ (void)showToast:(NSString*)text;
-+ (void)showToast:(NSString*)text type:(TvToastType)type;
-
-// global toast, need to be removed manually.
-+ (void)showGlobalToast:(NSString*)text;
-+ (void)hideGlobalToast;
-
-@end
-
-@interface TvDialogBuilder : NSObject
+@interface T4DialogBuilder : NSObject
 
 @property (nonatomic, retain) UIImage *image;
+@property (nonatomic, retain) UIImage *bgImage;
 @property (nonatomic, copy) DialogBlock resultBlock;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *message;
 @property (nonatomic) NSUInteger numberOfMessages;
 @property (nonatomic, copy) NSString *positiveButtonText;
 @property (nonatomic, copy) NSString *negativeButtonText;
-@property (nonatomic) TvButtonType positiveButtonType;
-@property (nonatomic) TvButtonType negativeButtonType;
-@property (nonatomic) TvDialogType dialogType;
+@property (nonatomic) T4DialogType dialogType;
 @property (nonatomic) BOOL hasCancelButton;
 @property (nonatomic) BOOL positiveButtonEnable;
 @property (nonatomic) BOOL negativeButtonEnable;
 
-- (TvDialog *)create;
 @end
 
-@interface TvToast : UIView
-- (id) initWithTitle:(NSString*)title type:(TvToastType)type;
+@interface T4Dialog : UIView
+{
+    T4DialogBuilder *_builder;
+}
 
-- (void)showToast;
-- (void)hideToast;
+- (id)initWithBuilder:(T4DialogBuilder *)newBuilder;
+
++ (void)showEditDialog;
++ (void)showOptionsDialog;
+
 @end
 
+@interface T4DialogBuilder(method)
+
+- (T4Dialog *)create;
+
+@end
