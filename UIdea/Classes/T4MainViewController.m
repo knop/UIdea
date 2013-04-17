@@ -12,6 +12,7 @@
 #import "T4ProjectCell.h"
 #import "T4UIProject.h"
 #import "T4Toast.h"
+#import "T4Dialog.h"
 
 #define defSectionHeight 18
 
@@ -96,7 +97,8 @@
 
 - (IBAction)onClickTest:(id)sender
 {
-    [T4Toast showWithText:@"陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮"];
+//    [T4Toast showWithText:@"陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮"];
+    [T4Dialog showEditDialog];
 }
 
 - (void)refreshView

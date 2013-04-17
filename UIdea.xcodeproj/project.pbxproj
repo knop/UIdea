@@ -37,6 +37,9 @@
 		4B8B7262170BD11C00C47854 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8B7261170BD11C00C47854 /* CoreGraphics.framework */; };
 		4B8B7268170BD11C00C47854 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4B8B7266170BD11C00C47854 /* InfoPlist.strings */; };
 		4B8B726A170BD11C00C47854 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B8B7269170BD11C00C47854 /* main.m */; };
+		4B91CE14171EFEAE0094F7CA /* edit_dialog_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B91CE12171EFEAE0094F7CA /* edit_dialog_bg@2x.png */; };
+		4B91CE15171EFEAE0094F7CA /* options_dialog_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B91CE13171EFEAE0094F7CA /* options_dialog_bg@2x.png */; };
+		4B91CE18171EFFFF0094F7CA /* T4OptionsDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B91CE17171EFFFF0094F7CA /* T4OptionsDialog.m */; };
 		4B9B8E7E171D95AC00C979F4 /* T4Dialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B9B8E7D171D95AC00C979F4 /* T4Dialog.m */; };
 		4BC5DA4A1718DDD800A90BA0 /* T4ProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC5DA481718DDD700A90BA0 /* T4ProjectViewController.m */; };
 		4BC5DA4B1718DDD800A90BA0 /* T4ProjectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BC5DA491718DDD800A90BA0 /* T4ProjectViewController.xib */; };
@@ -106,6 +109,10 @@
 		4B8B7267170BD11C00C47854 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4B8B7269170BD11C00C47854 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4B8B726B170BD11C00C47854 /* UIdea-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIdea-Prefix.pch"; sourceTree = "<group>"; };
+		4B91CE12171EFEAE0094F7CA /* edit_dialog_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit_dialog_bg@2x.png"; sourceTree = "<group>"; };
+		4B91CE13171EFEAE0094F7CA /* options_dialog_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "options_dialog_bg@2x.png"; sourceTree = "<group>"; };
+		4B91CE16171EFFFF0094F7CA /* T4OptionsDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = T4OptionsDialog.h; path = Classes/UIKit/T4OptionsDialog.h; sourceTree = "<group>"; };
+		4B91CE17171EFFFF0094F7CA /* T4OptionsDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = T4OptionsDialog.m; path = Classes/UIKit/T4OptionsDialog.m; sourceTree = "<group>"; };
 		4B9B8E7C171D95AC00C979F4 /* T4Dialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = T4Dialog.h; path = Classes/UIKit/T4Dialog.h; sourceTree = "<group>"; };
 		4B9B8E7D171D95AC00C979F4 /* T4Dialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = T4Dialog.m; path = Classes/UIKit/T4Dialog.m; sourceTree = "<group>"; };
 		4BC5DA471718DDD700A90BA0 /* T4ProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = T4ProjectViewController.h; path = Classes/T4ProjectViewController.h; sourceTree = "<group>"; };
@@ -242,6 +249,8 @@
 		4B79E8351712C61F004C151A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				4B91CE12171EFEAE0094F7CA /* edit_dialog_bg@2x.png */,
+				4B91CE13171EFEAE0094F7CA /* options_dialog_bg@2x.png */,
 				4BC5DA4F171904F000A90BA0 /* nav_bar_edit@2x.png */,
 				4BD81454171404D500E5A54A /* nav_bar_bg@2x.png */,
 				4BD8144E1713D61900E5A54A /* nav_bar_image_add@2x.png */,
@@ -357,6 +366,8 @@
 				4B9B8E7D171D95AC00C979F4 /* T4Dialog.m */,
 				4BDD97D5171A9E9E0023E20C /* T4Toast.h */,
 				4BDD97D6171A9E9E0023E20C /* T4Toast.m */,
+				4B91CE16171EFFFF0094F7CA /* T4OptionsDialog.h */,
+				4B91CE17171EFFFF0094F7CA /* T4OptionsDialog.m */,
 			);
 			name = UIKit;
 			sourceTree = "<group>";
@@ -441,6 +452,8 @@
 				4BC5DA50171904F000A90BA0 /* nav_bar_edit@2x.png in Resources */,
 				4BDD97D2171A9CF50023E20C /* app_icon.png in Resources */,
 				4BDD97D4171A9CF90023E20C /* app_icon@2x.png in Resources */,
+				4B91CE14171EFEAE0094F7CA /* edit_dialog_bg@2x.png in Resources */,
+				4B91CE15171EFEAE0094F7CA /* options_dialog_bg@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,6 +484,7 @@
 				4BC5DA4E1718EDBC00A90BA0 /* T4SearchCell.m in Sources */,
 				4BDD97D7171A9E9E0023E20C /* T4Toast.m in Sources */,
 				4B9B8E7E171D95AC00C979F4 /* T4Dialog.m in Sources */,
+				4B91CE18171EFFFF0094F7CA /* T4OptionsDialog.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
