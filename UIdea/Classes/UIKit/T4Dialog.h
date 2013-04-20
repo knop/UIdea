@@ -13,38 +13,18 @@ typedef enum {
     T4DialogTypeOptions   = 2,
 } T4DialogType;
 
-typedef enum {
-    T4DialogResultTypePositive = 1,
-    T4DialogResultTypeNegative = 2,
-    T4DialogResultTypeCancel = 3,
-} T4DialogResultType;
-
-typedef void (^DialogBlock)(T4DialogResultType result);
-
-@interface T4DialogBuilder : NSObject
-
-@property (nonatomic, copy) DialogBlock resultBlock;
-@property (nonatomic, copy) NSString *title;
-@property (nonatomic, copy) NSString *message;
-@property (nonatomic) T4DialogType dialogType;
-
-@end
-
-@interface T4Dialog : UIView
+@interface T4Dialog : NSObject<UIGestureRecognizerDelegate>
 {
-    T4DialogBuilder *_builder;
+    UIView *_contentView;
+    UIView *_coverView;
     CGPoint _center;
 }
 
-- (id)initWithBuilder:(T4DialogBuilder *)newBuilder;
+@end
+
+@interface T4Dialog(StaticMethod)
 
 + (void)showEditDialog;
 + (void)showOptionsDialog;
-
-@end
-
-@interface T4DialogBuilder(method)
-
-- (T4Dialog *)create;
 
 @end

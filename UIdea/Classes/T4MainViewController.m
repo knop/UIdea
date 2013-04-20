@@ -98,7 +98,7 @@
 - (IBAction)onClickTest:(id)sender
 {
 //    [T4Toast showWithText:@"陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮"];
-    [T4Dialog showEditDialog];
+    [T4Dialog showOptionsDialog];
 }
 
 - (void)refreshView

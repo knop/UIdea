@@ -8,111 +8,85 @@
 
 #import "T4Dialog.h"
 #import "T4OptionsDialog.h"
-
-@implementation T4DialogBuilder
-
-
-
-@end
-
-@implementation T4DialogBuilder(method)
-
-- (T4Dialog *)create
-{
-    return [[[T4Dialog alloc] initWithBuilder:self] autorelease];
-}
-
-@end
+#import "T4EditDialog.h"
 
 @implementation T4Dialog
 
-- (id)initWithBuilder:(T4DialogBuilder *)newBuilder
+- (id)init
 {
-    self = [super initWithFrame:CGRectMake(0, 0, 320, 460)];
     if (self) {
-        _builder = [newBuilder retain];
-        [self initView];
-        
+        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+        _coverView = [[UIView alloc] initWithFrame:window.frame];
+        _coverView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.4];
+        [window addSubview:_coverView];
     }
     return self;
 }
 
 - (void)dealloc
 {
-    T4_RELEASE_SAFELY(_builder);
+    T4_RELEASE_SAFELY(_contentView);
+    T4_RELEASE_SAFELY(_coverView);
     [super dealloc];
 }
 
-- (void)initView
+- (UIView *)setupView
 {
-    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    _center = window.center;
-    switch (_builder.dialogType) {
-        case T4DialogTypeEdit:
-            [self initEditDialog];
-            break;
-        case T4DialogTypeOptions:
-            [self initOptionsDialog];
-            break;            
-        default:
-            [self initDefaultDialog];
-            break;
+    return nil;
+}
+
+- (void)tapRecognizerEvent:(UIGestureRecognizer *)recognizer
+{
+    if(recognizer.state == UIGestureRecognizerStateEnded) {
+        [self dismiss];
     }
 }
 
-- (void)initEditDialog
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
+       shouldReceiveTouch:(UITouch *)touch
 {
-    UIImageView *bgImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"edit_dialog_bg"]];
-    bgImageView.center = _center;
-    [self addSubview:bgImageView];
-    [bgImageView release];
-}
-
-- (void)initOptionsDialog
-{
-    UIImageView *bgImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"options_dialog_bg"]];
-    bgImageView.center = _center;
-    [self addSubview:bgImageView];
-    [bgImageView release];
-}
-
-- (void)initDefaultDialog
-{
-    UIImageView *bgImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"edit_dialog_bg"]];
-    bgImageView.center = _center;
-    [self addSubview:bgImageView];
-    [bgImageView release];
+    if ([touch.view isKindOfClass:[UIButton class]]) {
+        return NO;
+    } else {
+        return YES;
+    }
 }
 
 - (void)show
 {
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    self.center = window.center;
-    [window addSubview:self];
+    _contentView = [[self setupView] retain];
+    _contentView.center = window.center;
     
-    UIView* view = [[UIApplication sharedApplication] keyWindow].rootViewController.view;
-    [view endEditing:YES];
-    CGFloat max = MAX([[UIScreen mainScreen] bounds].size.height, [[UIScreen mainScreen] bounds].size.width);
-    CGRect coverRect = CGRectMake(0, 0, max, max);
-    UIView *coverView = [[[UIView alloc] initWithFrame:coverRect] autorelease];
-    coverView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.4];
-    [view addSubview:coverView];
-    [view addSubview:self];
+    UITapGestureRecognizer *tapRecognizer =
+        [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                action:@selector(tapRecognizerEvent:)];
+    tapRecognizer.delegate = self;
+    [window addGestureRecognizer:tapRecognizer];
+    [tapRecognizer release];
+    
+    [window addSubview:_contentView];
 }
+
+- (void)dismiss
+{
+    [_coverView removeFromSuperview];
+    [_contentView removeFromSuperview];
+}
+
+@end
+
+@implementation T4Dialog(StaticMethod)
 
 + (void)showEditDialog
 {
-    T4DialogBuilder *builder = [[[T4DialogBuilder alloc] init] autorelease];
-    builder.dialogType = T4DialogTypeEdit;
-    [[builder create] show];
+    T4EditDialog *dialog = [[[T4EditDialog alloc] init] autorelease];
+    [dialog show];
 }
 
 + (void)showOptionsDialog
 {
-    T4DialogBuilder *builder = [[T4DialogBuilder alloc] init];
-    builder.dialogType = T4DialogTypeEdit;
-    T4Dialog *dialog = [[[T4Dialog alloc] initWithBuilder:builder] autorelease];
-    [builder release];
+    T4OptionsDialog *dialog = [[[T4OptionsDialog alloc] init] autorelease];
     [dialog show];
 }
 

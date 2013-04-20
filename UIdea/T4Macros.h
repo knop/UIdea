@@ -28,6 +28,9 @@
 #define DefShadowColor1 [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:0.5f]
 #define DefShadowColor2 [UIColor colorWithRed:56.0f/255.0f green:103.0f/255.0f blue:146.0f/255.0f alpha:0.75f]
 
+//Dialog标题阴影
+#define DefShadowColor3 [UIColor colorWithRed:27.0f/255.0f green:38.0f/255.0f blue:48.0f/255.0f alpha:0.75f]
+
 #pragma mark - Shadow offset
 
 #define DefShadowOffset1 CGSizeMake(0, -1)

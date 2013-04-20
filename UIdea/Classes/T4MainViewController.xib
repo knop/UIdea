@@ -178,22 +178,16 @@
 										<reference key="IBUIHighlightedTitleColor" ref="862469157"/>
 										<reference key="IBUINormalTitleColor" ref="862469157"/>
 										<reference key="IBUINormalTitleShadowColor" ref="156563635"/>
-										<object class="NSCustomResource" key="IBUIHighlightedImage">
-											<string key="NSClassName">NSImage</string>
-											<string key="NSResourceName">main_search_icon@2x.png</string>
-										</object>
-										<object class="NSCustomResource" key="IBUINormalImage">
+										<object class="NSCustomResource" key="IBUIHighlightedImage" id="1065638042">
 											<string key="NSClassName">NSImage</string>
 											<string key="NSResourceName">search_icon@2x.png</string>
 										</object>
-										<object class="NSCustomResource" key="IBUIHighlightedBackgroundImage">
-											<string key="NSClassName">NSImage</string>
-											<string key="NSResourceName">main_search_input_bg@2x.png</string>
-										</object>
-										<object class="NSCustomResource" key="IBUINormalBackgroundImage">
+										<reference key="IBUINormalImage" ref="1065638042"/>
+										<object class="NSCustomResource" key="IBUIHighlightedBackgroundImage" id="1022684125">
 											<string key="NSClassName">NSImage</string>
 											<string key="NSResourceName">search_input_bg@2x.png</string>
 										</object>
+										<reference key="IBUINormalBackgroundImage" ref="1022684125"/>
 										<object class="IBUIFontDescription" key="IBUIFontDescription">
 											<int key="type">2</int>
 											<double key="pointSize">14</double>
@@ -250,6 +244,7 @@
 								<string key="NSFrame">{{0, 53}, {320, 407}}</string>
 								<reference key="NSSuperview" ref="613250766"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<reference key="IBUIBackgroundColor" ref="908644811"/>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -473,7 +468,7 @@
 				<string key="20.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="24.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<real value="1" key="24.IBUIButtonInspectorSelectedEdgeInsetMetadataKey"/>
-				<real value="0.0" key="24.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
+				<real value="1" key="24.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 				<string key="8.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="9.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			</dictionary>
@@ -547,8 +542,6 @@
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="main_add_project@2x.png">{258, 258}</string>
-			<string key="main_search_icon@2x.png">{16, 16}</string>
-			<string key="main_search_input_bg@2x.png">{16, 16}</string>
 			<string key="main_table_view_list@2x.png">{40, 40}</string>
 			<string key="search_bar_bg@2x.png">{1, 88}</string>
 			<string key="search_icon@2x.png">{30, 30}</string>

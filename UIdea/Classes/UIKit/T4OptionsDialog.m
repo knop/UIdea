@@ -10,28 +10,50 @@
 
 @implementation T4OptionsDialog
 
-- (id)init
+- (UIView *)setupView
 {
-    self = [super init];
-    if (self) {
-        
-        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"options_dialog_bg"]];
-        
-        [self addSubview:imageView];
-        
-        [imageView release];
-        
-    }
-    return self;
-}
+    UIImage *bgImage = [UIImage imageNamed:@"options_dialog_bg"];
+    CGRect rect = CGRectMake(0, 0, CGImageGetWidth(bgImage.CGImage) / 2.0f,
+                             CGImageGetHeight(bgImage.CGImage) / 2.0f);
+    UIView *view = [[[UIView alloc] initWithFrame:rect] autorelease];
+    UIImageView *bgImageView = [[UIImageView alloc] initWithImage:bgImage];
+    [view addSubview:bgImageView];
+    [bgImageView release];
+    
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 28.0f, rect.size.width, 37.0f)];
+    titleLabel.backgroundColor = [UIColor clearColor];
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.text = @"添加设计稿";
+    titleLabel.textColor = DefFontColor6;
+    titleLabel.shadowColor = DefShadowColor3;
+    titleLabel.shadowOffset = DefShadowOffset1;
+    titleLabel.font = DefFont30;
+    [view addSubview:titleLabel];
+    
+    UIButton *albumButton = [[UIButton alloc] initWithFrame:CGRectMake(60.0f, 82.0f, 40.0f, 40.0f)];
+    [albumButton setBackgroundImage:[UIImage imageNamed:@"design_btn_album_normal"]
+                           forState:UIControlStateNormal];
+    [albumButton setBackgroundImage:[UIImage imageNamed:@"design_btn_album_press"]
+                           forState:UIControlStateHighlighted];    
+    [view addSubview:albumButton];
+    [albumButton release];
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        
-    }
-    return self;
+    UIButton *cameraButton = [[UIButton alloc] initWithFrame:CGRectMake(140.0f, 82.0f, 40.0f, 40.0f)];
+    [cameraButton setBackgroundImage:[UIImage imageNamed:@"design_btn_camera_normal"]
+                           forState:UIControlStateNormal];
+    [cameraButton setBackgroundImage:[UIImage imageNamed:@"design_btn_camera_press"]
+                           forState:UIControlStateHighlighted];
+    [view addSubview:cameraButton];
+    [cameraButton release];
+
+    UIButton *widgetButton = [[UIButton alloc] initWithFrame:CGRectMake(220.0f, 82.0f, 40.0f, 40.0f)];
+    [widgetButton setBackgroundImage:[UIImage imageNamed:@"design_btn_widget_normal"]
+                           forState:UIControlStateNormal];
+    [widgetButton setBackgroundImage:[UIImage imageNamed:@"design_btn_widget_press"]
+                           forState:UIControlStateHighlighted];
+    [view addSubview:widgetButton];
+    [widgetButton release];
+    return view;
 }
 
 @end
