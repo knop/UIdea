@@ -14,11 +14,14 @@
 
 - (id)init
 {
+    self = [super init];
     if (self) {
         UIWindow *window = [UIApplication sharedApplication].keyWindow;
-        _coverView = [[UIView alloc] initWithFrame:window.frame];
-        _coverView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.4];
-        [window addSubview:_coverView];
+        self.frame = window.frame;
+        self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.4];
+        [window addSubview:self];
+        
+        _center = window.center;
     }
     return self;
 }
@@ -26,13 +29,32 @@
 - (void)dealloc
 {
     T4_RELEASE_SAFELY(_contentView);
-    T4_RELEASE_SAFELY(_coverView);
     [super dealloc];
+}
+
+- (CGPoint)center
+{
+    return _center;
 }
 
 - (UIView *)setupView
 {
     return nil;
+}
+
+- (void)beforeShow
+{
+    
+}
+
+- (void)afterShow
+{
+    
+}
+
+- (void)beforeDismiss
+{
+    
 }
 
 - (void)tapRecognizerEvent:(UIGestureRecognizer *)recognizer
@@ -54,24 +76,27 @@
 
 - (void)show
 {
+    [self beforeShow];
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     _contentView = [[self setupView] retain];
-    _contentView.center = window.center;
-    
-    UITapGestureRecognizer *tapRecognizer =
-        [[UITapGestureRecognizer alloc] initWithTarget:self
-                                                action:@selector(tapRecognizerEvent:)];
-    tapRecognizer.delegate = self;
-    [window addGestureRecognizer:tapRecognizer];
-    [tapRecognizer release];
-    
+    _contentView.center = [self center];
+    if (self.enableTapRecognizer) {
+        UITapGestureRecognizer *tapRecognizer =
+            [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                    action:@selector(tapRecognizerEvent:)];
+        tapRecognizer.delegate = self;
+        [self addGestureRecognizer:tapRecognizer];
+        [tapRecognizer release];
+    }
     [window addSubview:_contentView];
+    [self afterShow];
 }
 
 - (void)dismiss
 {
-    [_coverView removeFromSuperview];
+    [self beforeDismiss];
     [_contentView removeFromSuperview];
+    [self removeFromSuperview];
 }
 
 @end

@@ -140,7 +140,7 @@
 
 - (void)onClickLeftNavBarButton
 {
-    NSLog(@"father-onClickLeftNavBarButton");
+    T4_LOG_P_FUNC;
     if (_leftNavButtonType == NavButtonBack) {
         [self.navigationController popViewControllerAnimated:YES];
     }
@@ -148,7 +148,7 @@
 
 - (void)onClickRightNavBarButton
 {
-    NSLog(@"father-onClickRightNavBarButton");
+    T4_LOG_P_FUNC;
     if (_rightNavButtonType == NavButtonBack) {
         [self.navigationController popViewControllerAnimated:YES];
     }
@@ -156,7 +156,7 @@
 
 - (void)onClickTitle
 {
-    NSLog(@"father-onClickTitle");
+    T4_LOG_P_FUNC;
 }
 
 @synthesize leftNavButtonType = _leftNavButtonType;

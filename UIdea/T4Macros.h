@@ -8,9 +8,28 @@
 
 #import "SynthesizeSingleton.h"
 
-#define T4_RELEASE_SAFELY(__POINTER) { [__POINTER release]; __POINTER = nil; }
+//__func__, __PRETTY_FUNCTION__, __LINE__, __FILE__, _cmd
 
-#define DefScreenWidth 320.0f
+#ifdef DEBUG
+    #  define T4_LOG(fmt, ...) \
+    do { \
+        NSLog((@"%@(%d) " fmt), \
+            [[NSString stringWithUTF8String:__FILE__] lastPathComponent], \
+            __LINE__, \
+            ##__VA_ARGS__); \
+    } while(0)
+
+    #  define T4_LOG_FUNC NSLog(@"%s", __func__)
+    #  define T4_LOG_P_FUNC NSLog(@"%s", __PRETTY_FUNCTION__)
+    #  define T4_RETAIN_COUNT(__p) NSLog(@"%s(%d): count = %d\n", __func__, __LINE__, [__p retainCount])
+#else
+    #  define T4_LOG(...)
+    #  define T4_LOG_FUNC
+    #  define T4_LOG_P_FUNC
+    #  define T4_RETAIN_COUNT(p)
+#endif
+
+#define T4_RELEASE_SAFELY(__POINTER) { [__POINTER release]; __POINTER = nil; }
 
 #pragma mark - Color Define
 

@@ -13,12 +13,14 @@ typedef enum {
     T4DialogTypeOptions   = 2,
 } T4DialogType;
 
-@interface T4Dialog : NSObject<UIGestureRecognizerDelegate>
+@interface T4Dialog : UIView<UIGestureRecognizerDelegate>
 {
     UIView *_contentView;
     UIView *_coverView;
     CGPoint _center;
 }
+
+@property (nonatomic) BOOL enableTapRecognizer;
 
 @end
 

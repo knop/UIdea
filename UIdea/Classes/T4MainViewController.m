@@ -61,12 +61,12 @@
 
 - (void)onClickLeftNavBarButton
 {
-    NSLog(@"child-onClickRightNavBarButton");
+    T4_LOG_P_FUNC;
 }
 
 - (void)onClickRightNavBarButton
 {
-    NSLog(@"child-onClickRightNavBarButton");
+    T4_LOG_P_FUNC;
     [self newProject];
 }
 
@@ -97,7 +97,6 @@
 
 - (IBAction)onClickTest:(id)sender
 {
-//    [T4Toast showWithText:@"陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮陈永亮"];
     [T4Dialog showOptionsDialog];
 }
 
@@ -141,7 +140,8 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     T4UIProject *project = [_projectManager.projects objectAtIndex:section];
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, DefScreenWidth, defSectionHeight)];
+    CGRect rect = CGRectMake(0.0f, 0.0f, tableView.frame.size.width, defSectionHeight);
+    UILabel *label = [[UILabel alloc] initWithFrame:rect];
     label.text = project.name;
     label.textAlignment = NSTextAlignmentCenter;
     label.backgroundColor = DefFontColor4;

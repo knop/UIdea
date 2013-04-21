@@ -30,12 +30,12 @@
 
 - (void)onClickRightNavBarButton
 {
-    NSLog(@"child-onClickRightNavBarButton");
+    T4_LOG_P_FUNC;
 }
 
 - (void)onClickTitle
 {
-    NSLog(@"child-onClickTitle");
+    T4_LOG_P_FUNC;
 }
 
 @end

@@ -10,6 +10,11 @@
 
 @implementation T4OptionsDialog
 
+- (void)beforeShow
+{
+    self.enableTapRecognizer = YES;
+}
+
 - (UIView *)setupView
 {
     UIImage *bgImage = [UIImage imageNamed:@"options_dialog_bg"];
@@ -29,20 +34,27 @@
     titleLabel.shadowOffset = DefShadowOffset1;
     titleLabel.font = DefFont30;
     [view addSubview:titleLabel];
+    [titleLabel release];
     
     UIButton *albumButton = [[UIButton alloc] initWithFrame:CGRectMake(60.0f, 82.0f, 40.0f, 40.0f)];
     [albumButton setBackgroundImage:[UIImage imageNamed:@"design_btn_album_normal"]
                            forState:UIControlStateNormal];
     [albumButton setBackgroundImage:[UIImage imageNamed:@"design_btn_album_press"]
-                           forState:UIControlStateHighlighted];    
+                           forState:UIControlStateHighlighted];
+    [albumButton addTarget:self
+                    action:@selector(onClickAlbum:)
+          forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:albumButton];
     [albumButton release];
 
     UIButton *cameraButton = [[UIButton alloc] initWithFrame:CGRectMake(140.0f, 82.0f, 40.0f, 40.0f)];
     [cameraButton setBackgroundImage:[UIImage imageNamed:@"design_btn_camera_normal"]
-                           forState:UIControlStateNormal];
+                            forState:UIControlStateNormal];
     [cameraButton setBackgroundImage:[UIImage imageNamed:@"design_btn_camera_press"]
-                           forState:UIControlStateHighlighted];
+                            forState:UIControlStateHighlighted];
+    [cameraButton addTarget:self
+                     action:@selector(onClickCamera:)
+           forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:cameraButton];
     [cameraButton release];
 
@@ -51,9 +63,28 @@
                            forState:UIControlStateNormal];
     [widgetButton setBackgroundImage:[UIImage imageNamed:@"design_btn_widget_press"]
                            forState:UIControlStateHighlighted];
+    [widgetButton addTarget:self
+                     action:@selector(onClickWidget:)
+           forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:widgetButton];
     [widgetButton release];
     return view;
+}
+
+- (void)onClickAlbum:(id)sender
+{
+    T4_LOG(@"%d", 10);
+    T4_LOG_P_FUNC;
+}
+
+- (void)onClickCamera:(id)sender
+{
+    T4_LOG_P_FUNC;
+}
+
+- (void)onClickWidget:(id)sender
+{
+    T4_LOG_P_FUNC;
 }
 
 @end

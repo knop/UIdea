@@ -25,6 +25,10 @@
 		4B46DF921721718400B3FC90 /* design_btn_camera_press@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B46DF8C1721718400B3FC90 /* design_btn_camera_press@2x.png */; };
 		4B46DF931721718400B3FC90 /* design_btn_widget_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B46DF8D1721718400B3FC90 /* design_btn_widget_normal@2x.png */; };
 		4B46DF941721718400B3FC90 /* design_btn_widget_press@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B46DF8E1721718400B3FC90 /* design_btn_widget_press@2x.png */; };
+		4B5646721723E7CD00FD7973 /* T4EditDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B56466F1723E7CD00FD7973 /* T4EditDialog.m */; };
+		4B5646731723E7CD00FD7973 /* T4OptionsDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5646711723E7CD00FD7973 /* T4OptionsDialog.m */; };
+		4B5646DE17242CB600FD7973 /* edit_dialog_button_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B5646DC17242CB600FD7973 /* edit_dialog_button_normal@2x.png */; };
+		4B5646DF17242CB600FD7973 /* edit_dialog_button_press@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B5646DD17242CB600FD7973 /* edit_dialog_button_press@2x.png */; };
 		4B79E7F8171165CE004C151A /* T4AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B79E7F7171165CE004C151A /* T4AppDelegate.m */; };
 		4B79E8141711CC83004C151A /* T4ControllerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B79E8131711CC83004C151A /* T4ControllerManager.m */; };
 		4B79E817171262E9004C151A /* T4UIViewData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B79E816171262E9004C151A /* T4UIViewData.m */; };
@@ -45,13 +49,11 @@
 		4B8B726A170BD11C00C47854 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B8B7269170BD11C00C47854 /* main.m */; };
 		4B91CE14171EFEAE0094F7CA /* edit_dialog_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B91CE12171EFEAE0094F7CA /* edit_dialog_bg@2x.png */; };
 		4B91CE15171EFEAE0094F7CA /* options_dialog_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B91CE13171EFEAE0094F7CA /* options_dialog_bg@2x.png */; };
-		4B91CE18171EFFFF0094F7CA /* T4OptionsDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B91CE17171EFFFF0094F7CA /* T4OptionsDialog.m */; };
 		4B9B8E7E171D95AC00C979F4 /* T4Dialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B9B8E7D171D95AC00C979F4 /* T4Dialog.m */; };
 		4BC5DA4A1718DDD800A90BA0 /* T4ProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC5DA481718DDD700A90BA0 /* T4ProjectViewController.m */; };
 		4BC5DA4B1718DDD800A90BA0 /* T4ProjectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BC5DA491718DDD800A90BA0 /* T4ProjectViewController.xib */; };
 		4BC5DA4E1718EDBC00A90BA0 /* T4SearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC5DA4D1718EDBC00A90BA0 /* T4SearchCell.m */; };
 		4BC5DA50171904F000A90BA0 /* nav_bar_edit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC5DA4F171904F000A90BA0 /* nav_bar_edit@2x.png */; };
-		4BC6790817203A7B00DA7430 /* T4EditDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC6790717203A7B00DA7430 /* T4EditDialog.m */; };
 		4BD34A461714650800DEA8A7 /* T4ProjectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD34A451714650800DEA8A7 /* T4ProjectCell.m */; };
 		4BD34A491714676200DEA8A7 /* T4TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD34A481714676200DEA8A7 /* T4TableViewCell.m */; };
 		4BD34A4C17146AF000DEA8A7 /* main_project_cell_empty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BD34A4A17146AF000DEA8A7 /* main_project_cell_empty@2x.png */; };
@@ -90,6 +92,12 @@
 		4B46DF8C1721718400B3FC90 /* design_btn_camera_press@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "design_btn_camera_press@2x.png"; sourceTree = "<group>"; };
 		4B46DF8D1721718400B3FC90 /* design_btn_widget_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "design_btn_widget_normal@2x.png"; sourceTree = "<group>"; };
 		4B46DF8E1721718400B3FC90 /* design_btn_widget_press@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "design_btn_widget_press@2x.png"; sourceTree = "<group>"; };
+		4B56466E1723E7CD00FD7973 /* T4EditDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = T4EditDialog.h; path = Classes/T4EditDialog.h; sourceTree = "<group>"; };
+		4B56466F1723E7CD00FD7973 /* T4EditDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = T4EditDialog.m; path = Classes/T4EditDialog.m; sourceTree = "<group>"; };
+		4B5646701723E7CD00FD7973 /* T4OptionsDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = T4OptionsDialog.h; path = Classes/T4OptionsDialog.h; sourceTree = "<group>"; };
+		4B5646711723E7CD00FD7973 /* T4OptionsDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = T4OptionsDialog.m; path = Classes/T4OptionsDialog.m; sourceTree = "<group>"; };
+		4B5646DC17242CB600FD7973 /* edit_dialog_button_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit_dialog_button_normal@2x.png"; sourceTree = "<group>"; };
+		4B5646DD17242CB600FD7973 /* edit_dialog_button_press@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit_dialog_button_press@2x.png"; sourceTree = "<group>"; };
 		4B79E7F6171165CE004C151A /* T4AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T4AppDelegate.h; sourceTree = "<group>"; };
 		4B79E7F7171165CE004C151A /* T4AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T4AppDelegate.m; sourceTree = "<group>"; };
 		4B79E8121711CC83004C151A /* T4ControllerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = T4ControllerManager.h; path = Classes/T4ControllerManager.h; sourceTree = "<group>"; };
@@ -124,8 +132,6 @@
 		4B8B726B170BD11C00C47854 /* UIdea-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIdea-Prefix.pch"; sourceTree = "<group>"; };
 		4B91CE12171EFEAE0094F7CA /* edit_dialog_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit_dialog_bg@2x.png"; sourceTree = "<group>"; };
 		4B91CE13171EFEAE0094F7CA /* options_dialog_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "options_dialog_bg@2x.png"; sourceTree = "<group>"; };
-		4B91CE16171EFFFF0094F7CA /* T4OptionsDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = T4OptionsDialog.h; path = Classes/UIKit/T4OptionsDialog.h; sourceTree = "<group>"; };
-		4B91CE17171EFFFF0094F7CA /* T4OptionsDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = T4OptionsDialog.m; path = Classes/UIKit/T4OptionsDialog.m; sourceTree = "<group>"; };
 		4B9B8E7C171D95AC00C979F4 /* T4Dialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = T4Dialog.h; path = Classes/UIKit/T4Dialog.h; sourceTree = "<group>"; };
 		4B9B8E7D171D95AC00C979F4 /* T4Dialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = T4Dialog.m; path = Classes/UIKit/T4Dialog.m; sourceTree = "<group>"; };
 		4BC5DA471718DDD700A90BA0 /* T4ProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = T4ProjectViewController.h; path = Classes/T4ProjectViewController.h; sourceTree = "<group>"; };
@@ -134,8 +140,6 @@
 		4BC5DA4C1718EDBC00A90BA0 /* T4SearchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = T4SearchCell.h; path = Classes/T4SearchCell.h; sourceTree = "<group>"; };
 		4BC5DA4D1718EDBC00A90BA0 /* T4SearchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = T4SearchCell.m; path = Classes/T4SearchCell.m; sourceTree = "<group>"; };
 		4BC5DA4F171904F000A90BA0 /* nav_bar_edit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_bar_edit@2x.png"; sourceTree = "<group>"; };
-		4BC6790617203A7B00DA7430 /* T4EditDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = T4EditDialog.h; path = Classes/UIKit/T4EditDialog.h; sourceTree = "<group>"; };
-		4BC6790717203A7B00DA7430 /* T4EditDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = T4EditDialog.m; path = Classes/UIKit/T4EditDialog.m; sourceTree = "<group>"; };
 		4BD34A411714626800DEA8A7 /* T4Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T4Macros.h; sourceTree = "<group>"; };
 		4BD34A441714650800DEA8A7 /* T4ProjectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = T4ProjectCell.h; path = Classes/T4ProjectCell.h; sourceTree = "<group>"; };
 		4BD34A451714650800DEA8A7 /* T4ProjectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = T4ProjectCell.m; path = Classes/T4ProjectCell.m; sourceTree = "<group>"; };
@@ -221,6 +225,17 @@
 			path = Design;
 			sourceTree = "<group>";
 		};
+		4B56466D1723DB5600FD7973 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				4B56466E1723E7CD00FD7973 /* T4EditDialog.h */,
+				4B56466F1723E7CD00FD7973 /* T4EditDialog.m */,
+				4B5646701723E7CD00FD7973 /* T4OptionsDialog.h */,
+				4B5646711723E7CD00FD7973 /* T4OptionsDialog.m */,
+			);
+			name = Custom;
+			sourceTree = "<group>";
+		};
 		4B79E7F2171155F3004C151A /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +264,7 @@
 		4B79E8111711CC37004C151A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				4B56466D1723DB5600FD7973 /* Custom */,
 				4BDD97CD17196E600023E20C /* UIKit */,
 				4B0CEADD1718113000B1589E /* UIDesign */,
 				4BD814601714182200E5A54A /* Cell */,
@@ -278,6 +294,8 @@
 		4B79E8351712C61F004C151A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				4B5646DC17242CB600FD7973 /* edit_dialog_button_normal@2x.png */,
+				4B5646DD17242CB600FD7973 /* edit_dialog_button_press@2x.png */,
 				4B91CE12171EFEAE0094F7CA /* edit_dialog_bg@2x.png */,
 				4B91CE13171EFEAE0094F7CA /* options_dialog_bg@2x.png */,
 				4BC5DA4F171904F000A90BA0 /* nav_bar_edit@2x.png */,
@@ -395,10 +413,6 @@
 				4B9B8E7D171D95AC00C979F4 /* T4Dialog.m */,
 				4BDD97D5171A9E9E0023E20C /* T4Toast.h */,
 				4BDD97D6171A9E9E0023E20C /* T4Toast.m */,
-				4B91CE16171EFFFF0094F7CA /* T4OptionsDialog.h */,
-				4B91CE17171EFFFF0094F7CA /* T4OptionsDialog.m */,
-				4BC6790617203A7B00DA7430 /* T4EditDialog.h */,
-				4BC6790717203A7B00DA7430 /* T4EditDialog.m */,
 			);
 			name = UIKit;
 			sourceTree = "<group>";
@@ -491,6 +505,8 @@
 				4B46DF921721718400B3FC90 /* design_btn_camera_press@2x.png in Resources */,
 				4B46DF931721718400B3FC90 /* design_btn_widget_normal@2x.png in Resources */,
 				4B46DF941721718400B3FC90 /* design_btn_widget_press@2x.png in Resources */,
+				4B5646DE17242CB600FD7973 /* edit_dialog_button_normal@2x.png in Resources */,
+				4B5646DF17242CB600FD7973 /* edit_dialog_button_press@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,8 +537,8 @@
 				4BC5DA4E1718EDBC00A90BA0 /* T4SearchCell.m in Sources */,
 				4BDD97D7171A9E9E0023E20C /* T4Toast.m in Sources */,
 				4B9B8E7E171D95AC00C979F4 /* T4Dialog.m in Sources */,
-				4B91CE18171EFFFF0094F7CA /* T4OptionsDialog.m in Sources */,
-				4BC6790817203A7B00DA7430 /* T4EditDialog.m in Sources */,
+				4B5646721723E7CD00FD7973 /* T4EditDialog.m in Sources */,
+				4B5646731723E7CD00FD7973 /* T4OptionsDialog.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
