@@ -12,7 +12,7 @@
 #import "T4ProjectCell.h"
 #import "T4UIProject.h"
 #import "T4Toast.h"
-#import "T4Dialog.h"
+#import "T4Dialog+Show.h"
 
 #define defSectionHeight 18
 
@@ -165,11 +165,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    T4UIProject *project = [_projectManager.projects objectAtIndex:indexPath.section];    
-    T4TableViewCell *cell = [[[T4ProjectCell alloc] init] autorelease];
+    T4UIProject *project = [_projectManager.projects objectAtIndex:indexPath.section];
     id object = [project.subProjects objectAtIndex:indexPath.row];
-    [cell setObject:object];
-    return cell;
+    return [T4TableViewCell tableView:tableView
+                        cellWithClass:[T4ProjectCell class]
+                           withObject:object];
 }
 
 @end

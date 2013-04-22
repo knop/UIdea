@@ -8,11 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-typedef enum {
-    T4DialogTypeEdit   = 1,
-    T4DialogTypeOptions   = 2,
-} T4DialogType;
-
 @interface T4Dialog : UIView<UIGestureRecognizerDelegate>
 {
     UIView *_contentView;
@@ -22,11 +17,6 @@ typedef enum {
 
 @property (nonatomic) BOOL enableTapRecognizer;
 
-@end
-
-@interface T4Dialog(StaticMethod)
-
-+ (void)showEditDialog;
-+ (void)showOptionsDialog;
+- (void)show;
 
 @end

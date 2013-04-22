@@ -29,6 +29,7 @@
 		4B5646731723E7CD00FD7973 /* T4OptionsDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5646711723E7CD00FD7973 /* T4OptionsDialog.m */; };
 		4B5646DE17242CB600FD7973 /* edit_dialog_button_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B5646DC17242CB600FD7973 /* edit_dialog_button_normal@2x.png */; };
 		4B5646DF17242CB600FD7973 /* edit_dialog_button_press@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B5646DD17242CB600FD7973 /* edit_dialog_button_press@2x.png */; };
+		4B5646E217243CA300FD7973 /* T4Dialog+Show.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5646E117243CA300FD7973 /* T4Dialog+Show.m */; };
 		4B79E7F8171165CE004C151A /* T4AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B79E7F7171165CE004C151A /* T4AppDelegate.m */; };
 		4B79E8141711CC83004C151A /* T4ControllerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B79E8131711CC83004C151A /* T4ControllerManager.m */; };
 		4B79E817171262E9004C151A /* T4UIViewData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B79E816171262E9004C151A /* T4UIViewData.m */; };
@@ -98,6 +99,8 @@
 		4B5646711723E7CD00FD7973 /* T4OptionsDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = T4OptionsDialog.m; path = Classes/T4OptionsDialog.m; sourceTree = "<group>"; };
 		4B5646DC17242CB600FD7973 /* edit_dialog_button_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit_dialog_button_normal@2x.png"; sourceTree = "<group>"; };
 		4B5646DD17242CB600FD7973 /* edit_dialog_button_press@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit_dialog_button_press@2x.png"; sourceTree = "<group>"; };
+		4B5646E017243CA300FD7973 /* T4Dialog+Show.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "T4Dialog+Show.h"; path = "Classes/T4Dialog+Show.h"; sourceTree = "<group>"; };
+		4B5646E117243CA300FD7973 /* T4Dialog+Show.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "T4Dialog+Show.m"; path = "Classes/T4Dialog+Show.m"; sourceTree = "<group>"; };
 		4B79E7F6171165CE004C151A /* T4AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T4AppDelegate.h; sourceTree = "<group>"; };
 		4B79E7F7171165CE004C151A /* T4AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T4AppDelegate.m; sourceTree = "<group>"; };
 		4B79E8121711CC83004C151A /* T4ControllerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = T4ControllerManager.h; path = Classes/T4ControllerManager.h; sourceTree = "<group>"; };
@@ -232,6 +235,8 @@
 				4B56466F1723E7CD00FD7973 /* T4EditDialog.m */,
 				4B5646701723E7CD00FD7973 /* T4OptionsDialog.h */,
 				4B5646711723E7CD00FD7973 /* T4OptionsDialog.m */,
+				4B5646E017243CA300FD7973 /* T4Dialog+Show.h */,
+				4B5646E117243CA300FD7973 /* T4Dialog+Show.m */,
 			);
 			name = Custom;
 			sourceTree = "<group>";
@@ -539,6 +544,7 @@
 				4B9B8E7E171D95AC00C979F4 /* T4Dialog.m in Sources */,
 				4B5646721723E7CD00FD7973 /* T4EditDialog.m in Sources */,
 				4B5646731723E7CD00FD7973 /* T4OptionsDialog.m in Sources */,
+				4B5646E217243CA300FD7973 /* T4Dialog+Show.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

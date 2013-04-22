@@ -84,9 +84,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    T4SearchCell *cell = [[[T4SearchCell alloc] init] autorelease];
-    [cell setObject:nil];
-    return cell;
+    return [T4TableViewCell tableView:tableView
+                        cellWithClass:[T4SearchCell class]
+                           withObject:nil];
 }
 
 @end

@@ -12,4 +12,8 @@
 
 - (void)setObject:(id)object;
 
++ (T4TableViewCell *)tableView:(UITableView *)tableView
+                 cellWithClass:(Class)c
+                    withObject:(id)object;
+
 @end

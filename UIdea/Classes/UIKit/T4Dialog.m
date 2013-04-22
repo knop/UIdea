@@ -7,8 +7,6 @@
 //
 
 #import "T4Dialog.h"
-#import "T4OptionsDialog.h"
-#import "T4EditDialog.h"
 
 @implementation T4Dialog
 
@@ -97,22 +95,6 @@
     [self beforeDismiss];
     [_contentView removeFromSuperview];
     [self removeFromSuperview];
-}
-
-@end
-
-@implementation T4Dialog(StaticMethod)
-
-+ (void)showEditDialog
-{
-    T4EditDialog *dialog = [[[T4EditDialog alloc] init] autorelease];
-    [dialog show];
-}
-
-+ (void)showOptionsDialog
-{
-    T4OptionsDialog *dialog = [[[T4OptionsDialog alloc] init] autorelease];
-    [dialog show];
 }
 
 @end

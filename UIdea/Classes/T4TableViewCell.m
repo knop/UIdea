@@ -15,4 +15,20 @@
     
 }
 
++ (T4TableViewCell *)tableView:(UITableView *)tableView
+                 cellWithClass:(Class)c
+                    withObject:(id)object
+{
+    NSString *identifier = NSStringFromClass(c);
+    T4TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (cell == nil) {
+        cell = [[[c alloc] initWithStyle:UITableViewCellStyleDefault
+                         reuseIdentifier:identifier] autorelease];
+    }
+    
+    [cell setObject:object];
+    
+    return cell;
+}
+
 @end
