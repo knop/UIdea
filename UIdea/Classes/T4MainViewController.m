@@ -12,7 +12,6 @@
 #import "T4ProjectCell.h"
 #import "T4UIProject.h"
 #import "T4Toast.h"
-#import "T4Dialog+Show.h"
 
 #define defSectionHeight 18
 
@@ -53,6 +52,7 @@
 {
     self.leftNavButtonType = NavButtonNone;
     self.rightNavButtonType = NavButtonAdd;
+    self.title = @"UIdea";
     UIColor *bgColor = DefViewBGColor;
     self.emptyView.backgroundColor = bgColor;
     self.dataView.backgroundColor = bgColor;
@@ -67,7 +67,8 @@
 - (void)onClickRightNavBarButton
 {
     T4_LOG_P_FUNC;
-    [self newProject];
+//    [self newProject];
+    [T4Dialog showEditDialogWithDelegate:self];
 }
 
 - (IBAction)onClickNew:(id)sender
@@ -78,26 +79,26 @@
 - (IBAction)onClickSearch:(id)sender
 {
     [[T4ControllerManager sharedInstance] showWithClassName:@"T4SearchViewController"
-                                                  style:ShowStyleAdd
-                                              animation:^(UIViewController *controller) {
-                                                  CGFloat beginY = 77.0f;
-                                                  CGFloat endY = 20.0f;
-                                                  controller.view.alpha = 0.3f;
-                                                  CGSize size = controller.view.frame.size;
-                                                  controller.view.frame = CGRectMake(0,beginY,size.width,size.height);
-                                                  [UIView beginAnimations:nil context:nil];
-                                                  [UIView setAnimationDelegate:self];
-                                                  [UIView setAnimationDuration:0.2];
-                                                  [UIView setAnimationCurve:UIViewAnimationCurveLinear];
-                                                  controller.view.alpha = 1.0f;
-                                                  controller.view.frame = CGRectMake(0,endY,size.width,size.height);
-                                                  [UIView commitAnimations];
-                                              }];
+                                                      style:ShowStyleAdd
+                                                  animation:^(UIViewController *controller) {
+                                                      CGFloat beginY = 77.0f;
+                                                      CGFloat endY = 20.0f;
+                                                      controller.view.alpha = 0.3f;
+                                                      CGSize size = controller.view.frame.size;
+                                                      controller.view.frame = CGRectMake(0,beginY,size.width,size.height);
+                                                      [UIView beginAnimations:nil context:nil];
+                                                      [UIView setAnimationDelegate:self];
+                                                      [UIView setAnimationDuration:0.2];
+                                                      [UIView setAnimationCurve:UIViewAnimationCurveLinear];
+                                                      controller.view.alpha = 1.0f;
+                                                      controller.view.frame = CGRectMake(0,endY,size.width,size.height);
+                                                      [UIView commitAnimations];
+                                                  }];
 }
 
 - (IBAction)onClickTest:(id)sender
 {
-    [T4Dialog showOptionsDialog];
+    [T4Dialog showEditDialogWithDelegate:self];
 }
 
 - (void)refreshView
@@ -129,7 +130,10 @@
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [[T4ControllerManager sharedInstance] showWithClassName:@"T4ProjectViewController"];
+    T4UIProject *project = [_projectManager.projects objectAtIndex:indexPath.section];
+    id object = [project.subProjects objectAtIndex:indexPath.row];
+    [[T4ControllerManager sharedInstance] showWithClassName:@"T4ProjectViewController"
+                                                     object:object];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -170,6 +174,15 @@
     return [T4TableViewCell tableView:tableView
                         cellWithClass:[T4ProjectCell class]
                            withObject:object];
+}
+
+#pragma mark - T4EditDialogDelegate
+- (void)editDoneWithText:(NSString *)text
+{
+    if (text == nil || text.length <= 0) {
+        return;
+    }
+    [self newProject];
 }
 
 @end

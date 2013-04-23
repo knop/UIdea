@@ -7,10 +7,11 @@
 //
 
 #import "T4ViewController.h"
+#import "T4Dialog+Show.h"
 
 @class T4UIProjectManager;
 
-@interface T4MainViewController : T4ViewController<UITableViewDelegate, UITableViewDataSource>
+@interface T4MainViewController : T4ViewController<UITableViewDelegate, UITableViewDataSource, T4EditDialogDelegate>
 {
     T4UIProjectManager *_projectManager;
 }

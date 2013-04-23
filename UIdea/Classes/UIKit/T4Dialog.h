@@ -16,7 +16,10 @@
 }
 
 @property (nonatomic) BOOL enableTapRecognizer;
+@property (nonatomic, assign) id delegate;
 
+- (id)initWithDelegate:(id)delegate;
 - (void)show;
+- (void)dismiss;
 
 @end

@@ -55,15 +55,60 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(T4ControllerManager)
 }
 
 - (void)showWithClassName:(NSString *)className
+{
+    [self showWithClassName:className
+                     object:nil];
+}
+
+- (void)showWithClassName:(NSString *)className
+                   object:(id)object
+{
+    [self showWithClassName:className
+                      style:ShowStylePush
+                     object:object];
+}
+
+- (void)showWithClassName:(NSString *)className
+                    style:(ShowStyle)style
+{
+    [self showWithClassName:className
+                      style:style
+                     object:nil];
+}
+
+- (void)showWithClassName:(NSString *)className
+                    style:(ShowStyle)style
+                   object:(id)object
+{
+    [self showWithClassName:className
+                      style:style
+                  animation:nil
+                     object:object];
+}
+
+- (void)showWithClassName:(NSString *)className
                     style:(ShowStyle)style
                 animation:(AnimationBlock)animation
 {
+    [self showWithClassName:className
+                      style:style
+                  animation:animation
+                     object:nil];
+}
+
+- (void)showWithClassName:(NSString *)className
+                    style:(ShowStyle)style
+                animation:(AnimationBlock)animation
+                   object:(id)object
+{
+    Class c = [_controllerDict objectForKey:className];
+    if (c == nil || ![c isSubclassOfClass:[T4ViewController class]]) {
+        return;
+    }
+    T4ViewController *controller = [[c alloc] initWithObject:object];
     UINavigationController *navigationController = [T4ControllerManager globalNavgationController];
-    if (style == ShowStyleAdd) {
-        Class c = [_controllerDict objectForKey:className];
-        UIViewController *controller = [[c alloc] init];
+    if (style == ShowStyleAdd) {       
         [navigationController addChildViewController:controller];
-        [controller release];
         if (animation != nil) {
             animation(controller);
         } else {
@@ -72,21 +117,10 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(T4ControllerManager)
         }
         [navigationController.view addSubview:controller.view];
     } else {
-        Class c = [_controllerDict objectForKey:className];
-        UIViewController *controller = [[c alloc] init];
-        [navigationController pushViewController:controller animated:YES];
-        [controller release];
+        [navigationController pushViewController:controller
+                                        animated:YES];
     }
-}
-
-- (void)showWithClassName:(NSString *)className style:(ShowStyle)style
-{
-    [self showWithClassName:className style:style animation:nil];
-}
-
-- (void)showWithClassName:(NSString *)className
-{
-    [self showWithClassName:className style:ShowStylePush];
+    [controller release];
 }
 
 @end

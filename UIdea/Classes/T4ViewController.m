@@ -16,26 +16,34 @@
     if (self) {
         CGRect rect = CGRectMake(0, 0, 200, 44);
         
-        UIView *view = [[UIView alloc] initWithFrame:rect];
         _titleLabel = [[UILabel alloc] initWithFrame:rect];
         _titleLabel.backgroundColor = [UIColor clearColor];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
-        _titleLabel.text = @"UIdea";
         _titleLabel.textColor = DefTitleColor;
         _titleLabel.shadowColor = DefShadowColor2;
         _titleLabel.shadowOffset = DefShadowOffset1;
         _titleLabel.font = DefFont40;
-        [view addSubview:_titleLabel];
         
-        self.navigationItem.titleView = view;
-        [view release];
+        self.navigationItem.titleView = _titleLabel;
+        
+        self.navBarHidden = NO;
     }
     
     return self;
 }
 
+- (id)initWithObject:(id)object
+{
+    self = [self init];
+    if (self) {
+        self.object = object;
+    }    
+    return self;
+}
+
 - (void)dealloc
 {
+    T4_RELEASE_SAFELY(_object);
     T4_RELEASE_SAFELY(_titleLabel);
     T4_RELEASE_SAFELY(_clickableView);
     [super dealloc];
@@ -44,7 +52,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"UIdea";
     self.leftNavButtonType = NavButtonBack;
     self.view.backgroundColor = DefViewBGColor;
 }
@@ -92,23 +99,10 @@
     return item;
 }
 
-- (void)setLeftNavButtonType:(NavButtonType)type
+- (void)setTitleClickable:(BOOL)clickable
 {
-    _leftNavButtonType = type;
-    UIBarButtonItem *item = [self createNavButtonWithType:type];
-    self.navigationItem.leftBarButtonItem = item;
-    if (item != nil) {
-        UIButton *button = (UIButton *)item.customView;
-        [button addTarget:self
-                   action:@selector(onClickLeftNavBarButton)
-         forControlEvents:UIControlEventTouchUpInside];
-    }
-}
-
-- (void)setClickable:(BOOL)clickable
-{
-    _clickable = clickable;
-    if (_clickable) {
+    _titleClickable = clickable;
+    if (_titleClickable) {
         CGRect parentViewFrame = self.navigationItem.titleView.frame;
         UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nav_bar_edit"]];
         CGRect imageFrame = imageView.frame;
@@ -125,6 +119,25 @@
     }
 }
 
+- (void)setNavBarHidden:(BOOL)hidden
+{
+    _navBarHidden = hidden;
+    self.navigationController.navigationBar.hidden = _navBarHidden;
+}
+
+- (void)setLeftNavButtonType:(NavButtonType)type
+{
+    _leftNavButtonType = type;
+    UIBarButtonItem *item = [self createNavButtonWithType:type];
+    self.navigationItem.leftBarButtonItem = item;
+    if (item != nil) {
+        UIButton *button = (UIButton *)item.customView;
+        [button addTarget:self
+                   action:@selector(onClickLeftNavBarButton)
+         forControlEvents:UIControlEventTouchUpInside];
+    }
+}
+
 - (void)setRightNavButtonType:(NavButtonType)type
 {
     _rightNavButtonType = type;
@@ -136,6 +149,18 @@
                    action:@selector(onClickRightNavBarButton)
          forControlEvents:UIControlEventTouchUpInside];
     }
+}
+
+- (void)setTitle:(NSString *)title
+{
+    if (_titleLabel) {
+        _titleLabel.text = title;
+    }
+}
+
+- (NSString *)title
+{
+    return _titleLabel.text;
 }
 
 - (void)onClickLeftNavBarButton
@@ -161,6 +186,8 @@
 
 @synthesize leftNavButtonType = _leftNavButtonType;
 @synthesize rightNavButtonType = _rightNavButtonType;
-@synthesize clickable = _clickable;
+@synthesize titleClickable = _titleClickable;
+@synthesize navBarHidden = _navBarHidden;
+@synthesize object = _object;
 
 @end

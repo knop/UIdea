@@ -6,9 +6,9 @@
 //  Copyright (c) 2013年 Team4. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "T4ViewController.h"
 
-@interface T4SearchViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+@interface T4SearchViewController : T4ViewController<UITableViewDataSource, UITableViewDelegate>
 
 @property (retain, nonatomic) IBOutlet UITableView *dataTableView;
 

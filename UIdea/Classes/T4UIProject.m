@@ -40,6 +40,15 @@
     [project release];
 }
 
++ (T4UIProject *)castFromObject:(id)object
+{
+    T4UIProject *project = nil;
+    if (object && [object isKindOfClass:[T4UIProject class]]) {
+         project = (T4UIProject *)object;
+    }
+    return project;
+}
+
 @synthesize name = _name;
 @synthesize description = _description;
 @synthesize subProjects = _subProjects;

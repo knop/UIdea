@@ -10,7 +10,7 @@
 
 @implementation T4OptionsDialog
 
-- (void)beforeShow
+- (void)dialogWillShow
 {
     self.enableTapRecognizer = YES;
 }
@@ -73,18 +73,32 @@
 
 - (void)onClickAlbum:(id)sender
 {
-    T4_LOG(@"%d", 10);
     T4_LOG_P_FUNC;
+    if (self.delegate && [self.delegate respondsToSelector:@selector(onClickAlbum:)]) {
+        [self.delegate performSelector:@selector(onClickAlbum:)
+                            withObject:nil];
+    }
+    [self dismiss];
 }
 
 - (void)onClickCamera:(id)sender
 {
     T4_LOG_P_FUNC;
+    if (self.delegate && [self.delegate respondsToSelector:@selector(onClickCamera:)]) {
+        [self.delegate performSelector:@selector(onClickCamera:)
+                            withObject:nil];
+    }
+    [self dismiss];
 }
 
 - (void)onClickWidget:(id)sender
 {
     T4_LOG_P_FUNC;
+    if (self.delegate && [self.delegate respondsToSelector:@selector(onClickWidget:)]) {
+        [self.delegate performSelector:@selector(onClickWidget:)
+                            withObject:nil];
+    }
+    [self dismiss];
 }
 
 @end

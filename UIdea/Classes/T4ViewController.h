@@ -21,6 +21,8 @@ typedef enum {
 
 @property (nonatomic) NavButtonType leftNavButtonType;
 @property (nonatomic) NavButtonType rightNavButtonType;
-@property (nonatomic) BOOL clickable;
+@property (nonatomic) BOOL titleClickable;
+@property (nonatomic) BOOL navBarHidden;
+@property (nonatomic, retain) id object;
 
 @end

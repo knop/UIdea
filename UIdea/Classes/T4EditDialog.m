@@ -52,12 +52,7 @@
     return CGPointMake(center.x, center.y - 70.0f);
 }
 
-- (void)beforeShow
-{
-    
-}
-
-- (void)afterShow
+- (void)dialogDidShow
 {
     [_nameTextField becomeFirstResponder];
 }
@@ -65,6 +60,11 @@
 - (void)onClickOK:(id)sender
 {
     T4_LOG_P_FUNC;
+    if (self.delegate && [self.delegate respondsToSelector:@selector(editDoneWithText:)]) {
+        [self.delegate performSelector:@selector(editDoneWithText:)
+                            withObject:_nameTextField.text];
+    }
+    [self dismiss];
 }
 
 @end

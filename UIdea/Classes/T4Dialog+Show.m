@@ -12,15 +12,15 @@
 
 @implementation T4Dialog (Show)
 
-+ (void)showEditDialog
++ (void)showEditDialogWithDelegate:(id)delegate
 {
-    T4EditDialog *dialog = [[[T4EditDialog alloc] init] autorelease];
+    T4EditDialog *dialog = [[[T4EditDialog alloc] initWithDelegate:delegate] autorelease];
     [dialog show];
 }
 
-+ (void)showOptionsDialog
++ (void)showOptionsDialogWithDelegate:(id)delegate
 {
-    T4OptionsDialog *dialog = [[[T4OptionsDialog alloc] init] autorelease];
+    T4OptionsDialog *dialog = [[[T4OptionsDialog alloc] initWithDelegate:delegate] autorelease];
     [dialog show];
 }
 

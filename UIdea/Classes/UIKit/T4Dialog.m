@@ -16,10 +16,19 @@
     if (self) {
         UIWindow *window = [UIApplication sharedApplication].keyWindow;
         self.frame = window.frame;
-        self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.4];
+        self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.2];
         [window addSubview:self];
         
         _center = window.center;
+    }
+    return self;
+}
+
+- (id)initWithDelegate:(id)delegate
+{
+    self = [self init];
+    if (self) {
+        self.delegate = delegate;
     }
     return self;
 }
@@ -40,17 +49,17 @@
     return nil;
 }
 
-- (void)beforeShow
+- (void)dialogWillShow
 {
     
 }
 
-- (void)afterShow
+- (void)dialogDidShow
 {
     
 }
 
-- (void)beforeDismiss
+- (void)dialogWillDismiss
 {
     
 }
@@ -74,11 +83,11 @@
 
 - (void)show
 {
-    [self beforeShow];
+    [self dialogWillShow];
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     _contentView = [[self setupView] retain];
     _contentView.center = [self center];
-    if (self.enableTapRecognizer) {
+    if (_enableTapRecognizer) {
         UITapGestureRecognizer *tapRecognizer =
             [[UITapGestureRecognizer alloc] initWithTarget:self
                                                     action:@selector(tapRecognizerEvent:)];
@@ -87,14 +96,17 @@
         [tapRecognizer release];
     }
     [window addSubview:_contentView];
-    [self afterShow];
+    [self dialogDidShow];
 }
 
 - (void)dismiss
 {
-    [self beforeDismiss];
+    [self dialogWillDismiss];
     [_contentView removeFromSuperview];
     [self removeFromSuperview];
 }
+
+@synthesize delegate = _delegate;
+@synthesize enableTapRecognizer = _enableTapRecognizer;
 
 @end

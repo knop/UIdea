@@ -7,6 +7,7 @@
 //
 
 #import "T4ProjectViewController.h"
+#import "T4UIProject.h"
 
 @interface T4ProjectViewController ()
 
@@ -19,7 +20,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.rightNavButtonType = NavButtonAdd;
-    self.clickable = YES;
+    self.titleClickable = YES;
+    
+    T4UIProject *project = [T4UIProject castFromObject:self.object];
+    self.title = project.name;
 }
 
 - (void)didReceiveMemoryWarning
@@ -31,11 +35,28 @@
 - (void)onClickRightNavBarButton
 {
     T4_LOG_P_FUNC;
+    [T4Dialog showOptionsDialogWithDelegate:self];
 }
 
 - (void)onClickTitle
 {
     T4_LOG_P_FUNC;
+}
+
+#pragma mark - T4OptionsDialogDelegate
+- (void)onClickAlbum:(id)sender
+{
+    
+}
+
+- (void)onClickCamera:(id)sender
+{
+    
+}
+
+- (void)onClickWidget:(id)sender
+{
+    
 }
 
 @end

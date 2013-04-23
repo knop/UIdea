@@ -7,7 +7,8 @@
 //
 
 #import "T4ViewController.h"
+#import "T4Dialog+Show.h"
 
-@interface T4ProjectViewController : T4ViewController
+@interface T4ProjectViewController : T4ViewController<T4OptionsDialogDelegate>
 
 @end

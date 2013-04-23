@@ -17,4 +17,6 @@
 
 - (void)addSubProjects;
 
++ (T4UIProject *)castFromObject:(id)object;
+
 @end

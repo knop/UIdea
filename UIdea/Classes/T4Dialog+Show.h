@@ -8,9 +8,23 @@
 
 #import "T4Dialog.h"
 
+@protocol T4EditDialogDelegate <NSObject>
+
+- (void)editDoneWithText:(NSString *)text;
+
+@end
+
+@protocol T4OptionsDialogDelegate <NSObject>
+
+- (void)onClickAlbum:(id)sender;
+- (void)onClickCamera:(id)sender;
+- (void)onClickWidget:(id)sender;
+
+@end
+
 @interface T4Dialog (Show)
 
-+ (void)showEditDialog;
-+ (void)showOptionsDialog;
++ (void)showEditDialogWithDelegate:(id)delegate;
++ (void)showOptionsDialogWithDelegate:(id)delegate;
 
 @end
