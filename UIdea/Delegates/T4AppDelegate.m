@@ -26,8 +26,7 @@
     [self.window makeKeyAndVisible];
     
     T4ControllerManager *controllerManager = [T4ControllerManager sharedInstance];
-    [controllerManager registerControllers];
-    [controllerManager showWithClassName:@"T4MainViewController"];
+    [controllerManager showFirstView];
     
     return YES;
 }

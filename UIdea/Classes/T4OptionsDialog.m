@@ -25,7 +25,12 @@
     [view addSubview:bgImageView];
     [bgImageView release];
     
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 28.0f, rect.size.width, 37.0f)];
+    CGFloat x = 0.0f;
+    CGFloat y = 0.0f;
+    CGFloat width = rect.size.width;
+    CGFloat height = 37.0f;
+    rect = CGRectMake(x, y, width, height);
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:rect];
     titleLabel.backgroundColor = [UIColor clearColor];
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.text = @"添加设计稿";
@@ -36,7 +41,12 @@
     [view addSubview:titleLabel];
     [titleLabel release];
     
-    UIButton *albumButton = [[UIButton alloc] initWithFrame:CGRectMake(60.0f, 82.0f, 40.0f, 40.0f)];
+    x = 41.0f;
+    y = y + height + 16.0f;
+    width = 40.0f;
+    height = 40.0f;
+    rect = CGRectMake(x, y, width, height);
+    UIButton *albumButton = [[UIButton alloc] initWithFrame:rect];
     [albumButton setBackgroundImage:[UIImage imageNamed:@"design_btn_album_normal"]
                            forState:UIControlStateNormal];
     [albumButton setBackgroundImage:[UIImage imageNamed:@"design_btn_album_press"]
@@ -46,8 +56,10 @@
           forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:albumButton];
     [albumButton release];
-
-    UIButton *cameraButton = [[UIButton alloc] initWithFrame:CGRectMake(140.0f, 82.0f, 40.0f, 40.0f)];
+    
+    x = x + width + 41.0f;
+    rect = CGRectMake(x, y, width, height);
+    UIButton *cameraButton = [[UIButton alloc] initWithFrame:rect];
     [cameraButton setBackgroundImage:[UIImage imageNamed:@"design_btn_camera_normal"]
                             forState:UIControlStateNormal];
     [cameraButton setBackgroundImage:[UIImage imageNamed:@"design_btn_camera_press"]
@@ -58,7 +70,9 @@
     [view addSubview:cameraButton];
     [cameraButton release];
 
-    UIButton *widgetButton = [[UIButton alloc] initWithFrame:CGRectMake(220.0f, 82.0f, 40.0f, 40.0f)];
+    x = x + width + 41.0f;
+    rect = CGRectMake(x, y, width, height);
+    UIButton *widgetButton = [[UIButton alloc] initWithFrame:rect];
     [widgetButton setBackgroundImage:[UIImage imageNamed:@"design_btn_widget_normal"]
                            forState:UIControlStateNormal];
     [widgetButton setBackgroundImage:[UIImage imageNamed:@"design_btn_widget_press"]

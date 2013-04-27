@@ -26,12 +26,26 @@
     [view addSubview:bgImageView];
     [bgImageView release];
     
-    _nameTextField = [[UITextField alloc] initWithFrame:CGRectMake(55.0f, 50.0f, 198.0f, 30.0f)];
+    CGFloat width = 198.0f;
+    CGFloat height = 30.0f;
+    CGFloat x = (rect.size.width - width) / 2.0f;
+    CGFloat y = 20.0f;
+    rect = CGRectMake(x, y, width, height);
+    UIImage *inputBgImage = [UIImage imageNamed:@"edit_dialog_input_bg"];
+    UIImageView *inputBgImageView = [[UIImageView alloc] initWithImage:inputBgImage];
+    inputBgImageView.frame = rect;
+    [view addSubview:inputBgImageView];
+    [inputBgImageView release];
+    CGFloat offset = 5.0f;
+    rect = CGRectMake(x + offset, y + offset, width, height);
+    _nameTextField = [[UITextField alloc] initWithFrame:rect];
     _nameTextField.placeholder = @"请输入名称";
-    _nameTextField.borderStyle = UITextBorderStyleBezel;
+    _nameTextField.borderStyle = UITextBorderStyleNone;
     [view addSubview:_nameTextField];
     
-    UIButton *okButton = [[UIButton alloc] initWithFrame:CGRectMake(55.0f, 95.0f, 198.0f, 32.0f)];
+    y = y + height + 17.0f;
+    height = 32.0f;
+    UIButton *okButton = [[UIButton alloc] initWithFrame:CGRectMake(x, y, width, height)];
     [okButton setTitle:@"确认" forState:UIControlStateNormal];
     [okButton setBackgroundImage:[UIImage imageNamed:@"edit_dialog_button_normal"]
                            forState:UIControlStateNormal];

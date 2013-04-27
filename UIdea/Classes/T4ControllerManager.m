@@ -36,6 +36,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(T4ControllerManager)
     self = [super init];
     if (self) {
         _controllerDict = [[NSMutableDictionary alloc] init];
+        [self registerControllers];
     }
     
     return self;
@@ -52,6 +53,11 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(T4ControllerManager)
 {
     NSString *key = NSStringFromClass(c);
     [_controllerDict setObject:c forKey:key];
+}
+
+- (void)showFirstView
+{
+    [self showWithClassName:@"T4MainViewController"];
 }
 
 - (void)showWithClassName:(NSString *)className

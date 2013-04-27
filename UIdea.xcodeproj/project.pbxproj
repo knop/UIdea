@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B0A27A9172AB0DC008BBDE2 /* edit_dialog_input_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B0A27A8172AB0DC008BBDE2 /* edit_dialog_input_bg@2x.png */; };
 		4B0CEAC51717D72500B1589E /* T4SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B0CEAC31717D72500B1589E /* T4SearchViewController.m */; };
 		4B0CEAC61717D72500B1589E /* T4SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B0CEAC41717D72500B1589E /* T4SearchViewController.xib */; };
 		4B0CEACA1717DEE000B1589E /* search_button_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B0CEAC81717DEE000B1589E /* search_button_normal@2x.png */; };
@@ -74,6 +75,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B0A27A8172AB0DC008BBDE2 /* edit_dialog_input_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit_dialog_input_bg@2x.png"; sourceTree = "<group>"; };
 		4B0CEAC21717D72500B1589E /* T4SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = T4SearchViewController.h; path = Classes/T4SearchViewController.h; sourceTree = "<group>"; };
 		4B0CEAC31717D72500B1589E /* T4SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = T4SearchViewController.m; path = Classes/T4SearchViewController.m; sourceTree = "<group>"; };
 		4B0CEAC41717D72500B1589E /* T4SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = T4SearchViewController.xib; path = Classes/T4SearchViewController.xib; sourceTree = "<group>"; };
@@ -299,6 +301,7 @@
 		4B79E8351712C61F004C151A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				4B0A27A8172AB0DC008BBDE2 /* edit_dialog_input_bg@2x.png */,
 				4B5646DC17242CB600FD7973 /* edit_dialog_button_normal@2x.png */,
 				4B5646DD17242CB600FD7973 /* edit_dialog_button_press@2x.png */,
 				4B91CE12171EFEAE0094F7CA /* edit_dialog_bg@2x.png */,
@@ -512,6 +515,7 @@
 				4B46DF941721718400B3FC90 /* design_btn_widget_press@2x.png in Resources */,
 				4B5646DE17242CB600FD7973 /* edit_dialog_button_normal@2x.png in Resources */,
 				4B5646DF17242CB600FD7973 /* edit_dialog_button_press@2x.png in Resources */,
+				4B0A27A9172AB0DC008BBDE2 /* edit_dialog_input_bg@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
